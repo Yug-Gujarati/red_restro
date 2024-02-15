@@ -1,0 +1,115 @@
+import 'package:flutter/material.dart';
+import 'package:red_restro/screens/staff/edit_staff_detail.dart';
+
+class KitchenManagerScreen extends StatefulWidget {
+  const KitchenManagerScreen({super.key});
+
+  @override
+  State<KitchenManagerScreen> createState() => _KitchenManagerScreenState();
+}
+
+class _KitchenManagerScreenState extends State<KitchenManagerScreen> {
+  bool isForm = false;
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          if (isForm)
+            EditStaffDetail()
+          else
+            Column(
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      "B'id",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
+                    ),
+                    SizedBox(
+                      width: 100,
+                    ),
+                    Text(
+                      "Name",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Divider(
+                  color: Colors.grey[400],
+                  height: 1,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      isForm = true;
+                    });
+                  },
+                  child: Row(
+                    children: [
+                      Text(
+                        "001",
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
+                      SizedBox(
+                        width: 100,
+                      ),
+                      Text(
+                        "Mayank",
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Divider(
+                  color: Colors.grey[400],
+                  height: 1,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      isForm = true;
+                    });
+                  },
+                  child: Row(
+                    children: [
+                      Text(
+                        "002",
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
+                      SizedBox(
+                        width: 100,
+                      ),
+                      Text(
+                        "Raju",
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+        ],
+      ),
+    );
+  }
+}
