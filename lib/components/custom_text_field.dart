@@ -26,16 +26,26 @@ class CustomTextField extends StatelessWidget {
         controller: controller,
         validator: validator,
         decoration: InputDecoration(
+          alignLabelWithHint: true,
+          contentPadding: EdgeInsets.only(top: 2, bottom: 2),
           filled: true,
           fillColor: Colors.white,
           hintText: hintText,
           hintStyle: TextStyle(color: Colors.orange[800]),
           prefixIcon: Padding(
-            padding: const EdgeInsets.only(left: 40, right: 50),
+            padding: const EdgeInsets.only(left: 40, right: 40),
             child: Icon(
               icon,
               color: Colors.orange[800],
             ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: _formKey.currentState?.validate() == false
+                  ? Colors.red
+                  : Color.fromARGB(255, 255, 153, 0),
+            ),
+            borderRadius: BorderRadius.circular(50),
           ),
           border: OutlineInputBorder(
             borderSide: BorderSide(

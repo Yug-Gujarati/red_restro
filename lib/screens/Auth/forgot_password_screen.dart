@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../components/custom_button.dart';
 import '../../components/custom_text_field.dart';
 import 'login_screen.dart';
 import 'otp_verify_screen.dart';
@@ -14,7 +15,6 @@ class ForgotPasswordScreen extends StatefulWidget {
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
-  final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,61 +29,66 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image.asset('assets/images/app_logo1.png'),
-                const Text(
-                  "BLISHBOWL",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22),
-                ),
-                const SizedBox(
-                  height: 50,
-                ),
-                Text(
-                  "Forgot Password",
-                  style: TextStyle(
-                      color: Colors.orange[800],
-                      fontWeight: FontWeight.bold,
-                      fontSize: 40),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Text(
-                    "Please enter your register email and we will send you password reset instruction to this email",
-                    style: TextStyle(color: Colors.orange[800]),
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset('assets/images/app_logo1.png'),
+                  const Text(
+                    "BLISHBOWL",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22),
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      CustomTextField(
-                        controller: emailController,
-                        hintText: 'enter your Email',
-                        errortext: "Please enter email",
-                        icon: Icons.mail,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter email';
-                          }
-                          return null;
-                        },
-                      ),
-                      const SizedBox(
-                        height: 7,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 120),
-                        child: Row(
+                  const SizedBox(
+                    height: 80,
+                  ),
+                  Text(
+                    "Forgot Password",
+                    style: TextStyle(
+                        color: Colors.orange[800],
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: Text(
+                      "Please enter your register email and we will send you password reset instruction to this email",
+                      style: TextStyle(color: Colors.orange[800], fontSize: 12),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        CustomTextField(
+                          controller: emailController,
+                          hintText: 'enter your Email',
+                          errortext: "Please enter email",
+                          icon: Icons.mail,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter email';
+                            } else if (!RegExp(
+                                    r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
+                                .hasMatch(value)) {
+                              return 'Please enter a valid email address';
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Row(
                           children: [
+                            Spacer(),
                             Text("Did't receive and email?",
                                 style: TextStyle(
                                     color: Colors.orange[800],
@@ -100,65 +105,40 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 )),
                           ],
                         ),
-                      ),
-                      const SizedBox(
-                        height: 25,
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          if (_formKey.currentState?.validate() == true) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => OtpVerifyScreen()));
-                          }
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange[800],
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50),
-                          ),
+                        const SizedBox(
+                          height: 25,
                         ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 92, vertical: 12),
-                          child: Text(
-                            "Send OTP",
-                            style: TextStyle(color: Colors.white, fontSize: 24),
-                          ),
+                        CustomButton(
+                          text: "Send OTP",
+                          onTap: () {
+                            if (_formKey.currentState?.validate() == true) {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => OtpVerifyScreen()));
+                            }
+                          },
+                          color: const Color.fromARGB(255, 239, 108, 0),
+                          borderColor: const Color.fromARGB(255, 239, 108, 0),
+                          textColor: Colors.white,
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginScreen()));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            side: const BorderSide(
-                                color: Color.fromARGB(255, 255, 153, 0)),
-                            borderRadius: BorderRadius.circular(50),
-                          ),
+                        const SizedBox(
+                          height: 10,
                         ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 110, vertical: 12),
-                          child: Text(
-                            "Cancle",
-                            style: TextStyle(color: Colors.black, fontSize: 24),
-                          ),
+                        CustomButton(
+                          text: 'Cancle',
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          color: Colors.white,
+                          borderColor: const Color.fromARGB(255, 239, 108, 0),
+                          textColor: Colors.black,
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

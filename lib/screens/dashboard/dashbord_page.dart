@@ -16,6 +16,15 @@ class DashBord_Page extends StatefulWidget {
 }
 
 class _DashBord_PageState extends State<DashBord_Page> {
+  final List<String> times = [
+    'Yesterday',
+    'Today',
+    'Weekly',
+    'Monthly',
+    'Yearly',
+  ];
+
+  late int currentPageIndex = 0;
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -29,6 +38,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
             scrollDirection: Axis.vertical,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -45,16 +55,19 @@ class _DashBord_PageState extends State<DashBord_Page> {
                       const Spacer(),
                       SizedBox(
                         height: 30,
-                        width: 230,
+                        width: 200,
                         child: TextFormField(
                           decoration: InputDecoration(
                             fillColor: Colors.white,
                             filled: true,
                             label: Text(
                               "What you want today",
-                              style: TextStyle(fontSize: 14),
+                              style: TextStyle(fontSize: 10),
                             ),
-                            prefixIcon: const Icon(Icons.search),
+                            prefixIcon: const Icon(
+                              Icons.search,
+                              size: 15,
+                            ),
                             border: OutlineInputBorder(
                               borderSide: const BorderSide(
                                 color: Colors.black,
@@ -75,7 +88,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => NotificationScreen()));
@@ -101,7 +114,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => MyRestaurant()));
@@ -126,7 +139,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(right: 180.0),
+                  padding: EdgeInsets.only(left: 12),
                   child: Text(
                     "Welome Admin,",
                     style: TextStyle(
@@ -136,10 +149,10 @@ class _DashBord_PageState extends State<DashBord_Page> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 150),
+                  padding: const EdgeInsets.only(left: 12),
                   child: Text(
                     "Your daily dashboard report here",
-                    style: TextStyle(color: Colors.grey[700]),
+                    style: TextStyle(color: Colors.grey[700], fontSize: 14),
                   ),
                 ),
                 Padding(
@@ -166,16 +179,18 @@ class _DashBord_PageState extends State<DashBord_Page> {
                               ),
                               Container(
                                 height: 20,
-                                width: 80,
+                                width: 70,
                                 decoration: BoxDecoration(
                                     color: Colors.orange[800],
                                     borderRadius: BorderRadius.circular(5)),
                                 child: const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Text(
                                       "Today",
-                                      style: TextStyle(color: Colors.white),
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 12),
                                     ),
                                     Icon(
                                       Icons.arrow_drop_down,
@@ -190,7 +205,8 @@ class _DashBord_PageState extends State<DashBord_Page> {
                             padding: EdgeInsets.only(right: 130),
                             child: Text(
                               "revenue report and chart is represent yeary data",
-                              style: TextStyle(color: Colors.grey[800]),
+                              style: TextStyle(
+                                  color: Colors.grey[800], fontSize: 14),
                             ),
                           ),
                           const SizedBox(
@@ -227,8 +243,9 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                   children: [
                                     Text(
                                       "All Food",
-                                      style:
-                                          TextStyle(color: Colors.orange[900]),
+                                      style: TextStyle(
+                                          color: Colors.orange[900],
+                                          fontSize: 12),
                                     ),
                                   ],
                                 ),
@@ -247,8 +264,9 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                   children: [
                                     Text(
                                       "Food",
-                                      style:
-                                          TextStyle(color: Colors.orange[900]),
+                                      style: TextStyle(
+                                          color: Colors.orange[900],
+                                          fontSize: 12),
                                     ),
                                   ],
                                 ),
@@ -267,8 +285,9 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                   children: [
                                     Text(
                                       "Beverage",
-                                      style:
-                                          TextStyle(color: Colors.orange[900]),
+                                      style: TextStyle(
+                                          color: Colors.orange[900],
+                                          fontSize: 12),
                                     ),
                                   ],
                                 ),
@@ -304,7 +323,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                               ),
                               Container(
                                 height: 20,
-                                width: 80,
+                                width: 70,
                                 decoration: BoxDecoration(
                                     color: Colors.orange[800],
                                     borderRadius: BorderRadius.circular(5)),
@@ -313,7 +332,8 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                   children: [
                                     Text(
                                       "Today",
-                                      style: TextStyle(color: Colors.white),
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 12),
                                     ),
                                     Icon(
                                       Icons.arrow_drop_down,
@@ -325,55 +345,57 @@ class _DashBord_PageState extends State<DashBord_Page> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(1.0),
-                            child: Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    buildTextButton(0, 'Yesterday'),
-                                    buildTextButton(1, 'Today'),
-                                    buildTextButton(2, 'Weekly'),
-                                    buildTextButton(3, 'Monthly'),
-                                    buildTextButton(4, 'Yearly'),
-                                  ],
-                                ),
-                                SizedBox(height: 8),
-                                AnimatedContainer(
-                                  duration: const Duration(milliseconds: 300),
-                                  curve: Curves.easeInOut,
-                                  alignment: Alignment(
-                                      (2 / 9) * (2.09 * selectedIndex - 4), 0),
-                                  child: Container(
-                                    height: 2,
-                                    width:
-                                        MediaQuery.of(context).size.width / 7,
-                                    color: Colors.orange[800],
-                                  ),
-                                ),
-                                Container(
-                                  height: 2.0,
-                                  color: Colors.black,
-                                  child: AnimatedContainer(
-                                    duration: const Duration(milliseconds: 300),
-                                    curve: Curves.easeInOut,
-                                    alignment: Alignment(
-                                        (2 / 9) * (2.09 * selectedIndex - 4),
-                                        0),
-                                    child: Container(
-                                      height: 8,
-                                      width:
-                                          MediaQuery.of(context).size.width / 7,
-                                      color: Colors.orange[800],
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Container(
+                              height: 50,
+                              width: 450,
+                              child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount: times.length,
+                                itemBuilder: (context, index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        currentPageIndex = index;
+                                      });
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            times[index],
+                                            style: TextStyle(
+                                              color: currentPageIndex == index
+                                                  ? Colors.orange[800]
+                                                  : Colors.grey[800],
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 5),
+                                          Container(
+                                            height: 3,
+                                            width: 50,
+                                            color: currentPageIndex == index
+                                                ? Colors.orange[800]
+                                                : Colors.transparent,
+                                          ),
+                                          Container(
+                                            width: 70,
+                                            height: 2,
+                                            color: Colors.grey[800],
+                                          )
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ),
-                              ],
+                                  );
+                                },
+                              ),
                             ),
                           ),
                           SizedBox(
-                            height: 50,
+                            height: 40,
                           ),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -461,6 +483,8 @@ class _DashBord_PageState extends State<DashBord_Page> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Container(
+                                height: 70,
+                                width: 100,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   border: Border.all(color: Colors.orange),
@@ -475,22 +499,22 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                       Text(
                                         "25",
                                         style: TextStyle(
-                                            fontSize: 20,
+                                            fontSize: 16,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         "On Delivery",
                                         style: TextStyle(
-                                            color: Colors.orange, fontSize: 16),
+                                            color: Colors.orange, fontSize: 14),
                                       )
                                     ],
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                width: 13,
-                              ),
+                              Spacer(),
                               Container(
+                                height: 70,
+                                width: 100,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   border: Border.all(color: Colors.orange),
@@ -505,22 +529,22 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                       Text(
                                         "60",
                                         style: TextStyle(
-                                            fontSize: 20,
+                                            fontSize: 16,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
-                                        "Delivery      ",
+                                        "Delivery",
                                         style: TextStyle(
-                                            color: Colors.orange, fontSize: 16),
+                                            color: Colors.orange, fontSize: 14),
                                       )
                                     ],
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                width: 13,
-                              ),
+                              Spacer(),
                               Container(
+                                height: 70,
+                                width: 100,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   border: Border.all(color: Colors.orange),
@@ -535,13 +559,13 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                       Text(
                                         "2",
                                         style: TextStyle(
-                                            fontSize: 20,
+                                            fontSize: 16,
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
-                                        "Canceled    ",
+                                        "Canceled",
                                         style: TextStyle(
-                                            color: Colors.orange, fontSize: 16),
+                                            color: Colors.orange, fontSize: 14),
                                       )
                                     ],
                                   ),
@@ -561,7 +585,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                     children: [
                       Container(
                         height: 80,
-                        width: 180,
+                        width: 170,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -570,7 +594,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CircleAvatar(
-                              radius: 20,
+                              radius: 15,
                               backgroundColor: Colors.red[400],
                               child: Icon(
                                 Icons.attach_money,
@@ -586,24 +610,22 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20),
+                                      fontSize: 16),
                                 ),
                                 Text(
                                   "Total Income",
                                   style: TextStyle(
-                                      color: Colors.grey[600], fontSize: 16),
+                                      color: Colors.grey[600], fontSize: 14),
                                 ),
                               ],
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
+                      Spacer(),
                       Container(
                         height: 80,
-                        width: 180,
+                        width: 170,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -612,7 +634,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CircleAvatar(
-                              radius: 20,
+                              radius: 15,
                               backgroundColor: Colors.green[400],
                               child: Icon(
                                 Icons.document_scanner_outlined,
@@ -628,12 +650,12 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20),
+                                      fontSize: 16),
                                 ),
                                 Text(
                                   "Total menus",
                                   style: TextStyle(
-                                      color: Colors.grey[600], fontSize: 16),
+                                      color: Colors.grey[600], fontSize: 14),
                                 ),
                               ],
                             ),
@@ -650,7 +672,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                     children: [
                       Container(
                         height: 80,
-                        width: 180,
+                        width: 170,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -659,7 +681,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CircleAvatar(
-                              radius: 20,
+                              radius: 15,
                               backgroundColor: Colors.blue[400],
                               child: Icon(
                                 Icons.person,
@@ -675,24 +697,22 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20),
+                                      fontSize: 16),
                                 ),
                                 Text(
                                   "Total customers",
                                   style: TextStyle(
-                                      color: Colors.grey[600], fontSize: 16),
+                                      color: Colors.grey[600], fontSize: 14),
                                 ),
                               ],
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
+                      Spacer(),
                       Container(
                         height: 80,
-                        width: 180,
+                        width: 170,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -701,7 +721,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             CircleAvatar(
-                              radius: 20,
+                              radius: 15,
                               backgroundColor: Colors.amber[400],
                               child: Icon(
                                 Icons.restaurant,
@@ -717,12 +737,12 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20),
+                                      fontSize: 16),
                                 ),
                                 Text(
                                   "Total orders",
                                   style: TextStyle(
-                                      color: Colors.grey[600], fontSize: 16),
+                                      color: Colors.grey[600], fontSize: 14),
                                 ),
                               ],
                             ),
@@ -740,7 +760,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(10.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -767,14 +787,14 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                     "86%",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 20,
+                                        fontSize: 16,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   percent: 0.75,
                                   progressColor: Colors.greenAccent[400],
                                 ),
                                 SizedBox(
-                                  width: 20,
+                                  width: 10,
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -784,7 +804,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 20),
+                                          fontSize: 16),
                                     ),
                                     Text(
                                       "Successfull orders",
@@ -795,9 +815,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(
-                                  width: 5,
-                                ),
+                                Spacer(),
                                 CircularPercentIndicator(
                                   radius: 30,
                                   lineWidth: 10,
@@ -805,14 +823,14 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                     "14%",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 20,
+                                        fontSize: 16,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   percent: 0.30,
                                   progressColor: Colors.purple,
                                 ),
                                 SizedBox(
-                                  width: 20,
+                                  width: 10,
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -822,7 +840,7 @@ class _DashBord_PageState extends State<DashBord_Page> {
                                       style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 20),
+                                          fontSize: 16),
                                     ),
                                     Text(
                                       "Unsuccessfull orders",
@@ -845,23 +863,6 @@ class _DashBord_PageState extends State<DashBord_Page> {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget buildTextButton(int index, String text) {
-    return TextButton(
-      onPressed: () {
-        setState(() {
-          selectedIndex = index;
-        });
-      },
-      child: Text(
-        text,
-        style: TextStyle(
-          color: selectedIndex == index ? Colors.orange[800] : Colors.grey[800],
-          fontSize: 12,
         ),
       ),
     );

@@ -66,7 +66,7 @@ class _TableScreenState extends State<TableScreen> {
                       const Spacer(),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => NotificationScreen()));
@@ -92,7 +92,7 @@ class _TableScreenState extends State<TableScreen> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => MyRestaurant()));

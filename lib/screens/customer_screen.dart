@@ -112,7 +112,7 @@ class _CustomerScreenState extends State<CustomerScreen> {
                       Spacer(),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => NotificationScreen()));
@@ -138,7 +138,7 @@ class _CustomerScreenState extends State<CustomerScreen> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => MyRestaurant()));
@@ -187,7 +187,7 @@ class _CustomerScreenState extends State<CustomerScreen> {
                             "From: 01-01-2024",
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 12,
+                                fontSize: 10,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -206,7 +206,7 @@ class _CustomerScreenState extends State<CustomerScreen> {
                             "To: 01-01-2024",
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 12,
+                                fontSize: 10,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -234,7 +234,7 @@ class _CustomerScreenState extends State<CustomerScreen> {
                                 "000",
                                 style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 12,
+                                    fontSize: 10,
                                     fontWeight: FontWeight.bold),
                               ),
                             ],
@@ -295,56 +295,80 @@ class _CustomerScreenState extends State<CustomerScreen> {
                                   "assets/images/Untitled design.png")),
                         ))
                       else
-                        for (int i = 0; i < orders.length; i++)
-                          GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                selectedOrderIndex = i;
-                              });
-                            },
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 5, vertical: 15),
-                              margin: EdgeInsets.only(bottom: 10),
-                              decoration: BoxDecoration(
-                                color: selectedOrderIndex == i
-                                    ? Colors.red[100]
-                                    : Colors.grey[200],
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    orders[i]['id']!,
-                                    style: TextStyle(
-                                        color: Colors.black, fontSize: 12),
-                                  ),
-                                  Text(
-                                    orders[i]['date']!,
-                                    style: TextStyle(
-                                        color: Colors.black, fontSize: 12),
-                                  ),
-                                  Text(
-                                    orders[i]['name']!,
-                                    style: TextStyle(
-                                        color: Colors.black, fontSize: 12),
-                                  ),
-                                  Text(
-                                    orders[i]['address']!,
-                                    style: TextStyle(
-                                        color: Colors.black, fontSize: 12),
-                                  ),
-                                  Text(
-                                    orders[i]['phone']!,
-                                    style: TextStyle(
-                                        color: Colors.black, fontSize: 12),
-                                  ),
-                                ],
-                              ),
-                            ),
+                        Container(
+                          width: 600,
+                          height: 570,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.grey[200],
                           ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 5.0, right: 5),
+                            child: ListView.builder(
+                                scrollDirection: Axis.vertical,
+                                itemCount: orders.length,
+                                itemBuilder: (context, index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        selectedOrderIndex = index;
+                                      });
+                                    },
+                                    child: Container(
+                                      height: 40,
+                                      decoration: BoxDecoration(
+                                        color: selectedOrderIndex == index
+                                            ? Colors.red[100]
+                                            : Colors.grey[200],
+                                        borderRadius: BorderRadius.circular(5),
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            orders[index]['id']!,
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 10),
+                                          ),
+                                          Spacer(),
+                                          Text(
+                                            orders[index]['date']!,
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 10),
+                                          ),
+                                          Spacer(),
+                                          Text(
+                                            orders[index]['name']!,
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 10),
+                                          ),
+                                          Spacer(),
+                                          Text(
+                                            orders[index]['address']!,
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 10),
+                                          ),
+                                          Spacer(),
+                                          Text(
+                                            orders[index]['phone']!,
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 10),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                }),
+                          ),
+                        ),
                     ],
                   ),
                 ),

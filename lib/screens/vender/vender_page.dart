@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:red_restro/screens/vender/add_vender_form.dart';
 
-import '../components/drawer.dart';
-import 'Setting/my_restaurant.dart';
-import 'notification/notification_screen.dart';
+import '../../components/drawer.dart';
+import '../Setting/my_restaurant.dart';
+import '../notification/notification_screen.dart';
 
 class VenderPage extends StatefulWidget {
   const VenderPage({super.key});
@@ -73,6 +74,24 @@ class _VenderPageState extends State<VenderPage> {
   ];
 
   int selectedOrderIndex = -1;
+
+  void showForm() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 600),
+            child: AlertDialog(
+              backgroundColor: Colors.white,
+              scrollable: true,
+              surfaceTintColor: Colors.white,
+              content: AddVenderForm(),
+              contentPadding: EdgeInsets.symmetric(horizontal: 20),
+            ),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,7 +133,7 @@ class _VenderPageState extends State<VenderPage> {
                     const Spacer(),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
@@ -141,7 +160,7 @@ class _VenderPageState extends State<VenderPage> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const MyRestaurant()));
@@ -172,7 +191,7 @@ class _VenderPageState extends State<VenderPage> {
                   children: [
                     SizedBox(
                       height: 30,
-                      width: 200,
+                      width: 180,
                       child: TextFormField(
                         decoration: InputDecoration(
                           fillColor: Colors.white,
@@ -180,9 +199,12 @@ class _VenderPageState extends State<VenderPage> {
                           // hintText: "What you want today",
                           label: const Text(
                             "What you want today",
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: 10),
                           ),
-                          prefixIcon: const Icon(Icons.search),
+                          prefixIcon: const Icon(
+                            Icons.search,
+                            size: 15,
+                          ),
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(
                               color: Colors.black,
@@ -200,7 +222,7 @@ class _VenderPageState extends State<VenderPage> {
                     ),
                     Container(
                       height: 30,
-                      width: 120,
+                      width: 115,
                       decoration: BoxDecoration(
                           color: Colors.red[200],
                           borderRadius: BorderRadius.circular(5)),
@@ -220,7 +242,9 @@ class _VenderPageState extends State<VenderPage> {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        showForm();
+                      },
                       child: Container(
                           height: 30,
                           width: 30,
@@ -288,57 +312,85 @@ class _VenderPageState extends State<VenderPage> {
                                 "assets/images/Untitled design.png")),
                       ))
                     else
-                      for (int i = 0; i < orders.length; i++)
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              selectedOrderIndex = i;
-                            });
-                          },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 5, vertical: 15),
-                            margin: EdgeInsets.only(bottom: 10),
-                            decoration: BoxDecoration(
-                              color: selectedOrderIndex == i
-                                  ? Colors.red[100]
-                                  : Colors.grey[200],
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  orders[i]['id']!,
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 12),
-                                ),
-                                Text(
-                                  orders[i]['date']!,
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 12),
-                                ),
-                                Text(
-                                  orders[i]['name']!,
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 12),
-                                ),
-                                Text(
-                                  orders[i]['address']!,
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 12),
-                                ),
-                                Text(
-                                  "${orders[i]['status']}",
-                                  style: TextStyle(
-                                    color: Colors.red,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                      Container(
+                        width: 600,
+                        height: 570,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.grey[200],
                         ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 5.0, right: 5),
+                          child: ListView.builder(
+                              scrollDirection: Axis.vertical,
+                              itemCount: orders.length,
+                              itemBuilder: (context, index) {
+                                return GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      selectedOrderIndex = index;
+                                      showForm();
+                                    });
+                                  },
+                                  child: Container(
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      color: selectedOrderIndex == index
+                                          ? Colors.red[100]
+                                          : Colors.grey[200],
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          orders[index]['id']!,
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 10),
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          orders[index]['date']!,
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 10),
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          orders[index]['name']!,
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 10),
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          orders[index]['address']!,
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 10),
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          "${orders[index]['status']}",
+                                          style: TextStyle(
+                                            color: orders[index]['status'] ==
+                                                    'Delivery'
+                                                ? Colors.green
+                                                : Colors.red,
+                                            fontSize: 10,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              }),
+                        ),
+                      ),
                   ],
                 ),
               ],

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:red_restro/components/drawer.dart';
+import 'package:red_restro/screens/order/edit_order_form.dart';
 
-import 'Setting/my_restaurant.dart';
-import 'notification/notification_screen.dart';
+import '../Setting/my_restaurant.dart';
+import '../notification/notification_screen.dart';
 
 class OrderScreen extends StatefulWidget {
   const OrderScreen({super.key});
@@ -80,6 +81,23 @@ class _OrderScreenState extends State<OrderScreen> {
     },
   ];
 
+  void showForm() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 600),
+            child: AlertDialog(
+              backgroundColor: Colors.white,
+              scrollable: true,
+              surfaceTintColor: Colors.white,
+              content: EditOrderForm(),
+              contentPadding: EdgeInsets.symmetric(horizontal: 20),
+            ),
+          );
+        });
+  }
+
   int selectedOrderIndex = -1;
   @override
   Widget build(BuildContext context) {
@@ -122,7 +140,7 @@ class _OrderScreenState extends State<OrderScreen> {
                     const Spacer(),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
@@ -149,7 +167,7 @@ class _OrderScreenState extends State<OrderScreen> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const MyRestaurant()));
@@ -180,7 +198,7 @@ class _OrderScreenState extends State<OrderScreen> {
                   children: [
                     SizedBox(
                       height: 30,
-                      width: 220,
+                      width: 200,
                       child: TextFormField(
                         decoration: InputDecoration(
                           fillColor: Colors.white,
@@ -188,9 +206,12 @@ class _OrderScreenState extends State<OrderScreen> {
                           // hintText: "What you want today",
                           label: const Text(
                             "What you want today",
-                            style: TextStyle(fontSize: 14),
+                            style: TextStyle(fontSize: 12),
                           ),
-                          prefixIcon: const Icon(Icons.search),
+                          prefixIcon: const Icon(
+                            Icons.search,
+                            size: 15,
+                          ),
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(
                               color: Colors.black,
@@ -209,7 +230,7 @@ class _OrderScreenState extends State<OrderScreen> {
                     const Spacer(),
                     Container(
                       height: 30,
-                      width: 130,
+                      width: 115,
                       decoration: BoxDecoration(
                           color: Colors.red[200],
                           borderRadius: BorderRadius.circular(5)),
@@ -239,32 +260,32 @@ class _OrderScreenState extends State<OrderScreen> {
                     Text(
                       "O'id",
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       "Date",
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       "Name",
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       "Address",
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       "Price",
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       "Status",
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -287,64 +308,92 @@ class _OrderScreenState extends State<OrderScreen> {
                                 "assets/images/Untitled design.png")),
                       ))
                     else
-                      for (int i = 0; i < orders.length; i++)
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              selectedOrderIndex = i;
-                            });
-                          },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 5, vertical: 15),
-                            margin: EdgeInsets.only(bottom: 10),
-                            decoration: BoxDecoration(
-                              color: selectedOrderIndex == i
-                                  ? Colors.red[100]
-                                  : Colors.grey[200],
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  orders[i]['id']!,
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 12),
-                                ),
-                                Text(
-                                  orders[i]['date']!,
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 12),
-                                ),
-                                Text(
-                                  orders[i]['name']!,
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 12),
-                                ),
-                                Text(
-                                  orders[i]['address']!,
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 12),
-                                ),
-                                Text(
-                                  orders[i]['price']!,
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 12),
-                                ),
-                                Text(
-                                  "${orders[i]['status']}",
-                                  style: TextStyle(
-                                    color: orders[i]['status'] == 'Delivery'
-                                        ? Colors.green
-                                        : Colors.red,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                      Container(
+                        width: 600,
+                        height: 570,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.grey[200],
                         ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 5.0, right: 5),
+                          child: ListView.builder(
+                              scrollDirection: Axis.vertical,
+                              itemCount: orders.length,
+                              itemBuilder: (context, index) {
+                                return GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      selectedOrderIndex = index;
+                                      showForm();
+                                    });
+                                  },
+                                  child: Container(
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      color: selectedOrderIndex == index
+                                          ? Colors.red[100]
+                                          : Colors.grey[200],
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          orders[index]['id']!,
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 10),
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          orders[index]['date']!,
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 10),
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          orders[index]['name']!,
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 10),
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          orders[index]['address']!,
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 10),
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          orders[index]['price']!,
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 10),
+                                        ),
+                                        Spacer(),
+                                        Text(
+                                          "${orders[index]['status']}",
+                                          style: TextStyle(
+                                            color: orders[index]['status'] ==
+                                                    'Delivery'
+                                                ? Colors.green
+                                                : Colors.red,
+                                            fontSize: 10,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              }),
+                        ),
+                      ),
                   ],
                 ),
               ],

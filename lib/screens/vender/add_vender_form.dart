@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:red_restro/screens/vender/vender_page.dart';
 
-import 'staff_screen.dart';
-
-class EditStaffDetail extends StatefulWidget {
-  const EditStaffDetail({super.key});
+class AddVenderForm extends StatefulWidget {
+  const AddVenderForm({super.key});
 
   @override
-  State<EditStaffDetail> createState() => _EditStaffDetailState();
+  State<AddVenderForm> createState() => _AddVenderFormState();
 }
 
-class _EditStaffDetailState extends State<EditStaffDetail> {
+class _AddVenderFormState extends State<AddVenderForm> {
   int isTapIndex = -1;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -32,41 +31,69 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          IconButton(
-                              onPressed: () {
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (Context) => StaffScreen()));
-                              },
-                              icon: Icon(
-                                Icons.arrow_back,
-                                color: Colors.black,
-                              )),
                           CircleAvatar(
                             backgroundImage:
                                 AssetImage('assets/images/profile.jpg'),
-                            radius: 50,
+                            radius: 30,
                           ),
-                          InkWell(
-                            onTap: () {},
-                            child: Container(
-                              height: 30,
-                              width: 30,
-                              decoration: BoxDecoration(
-                                  color: Colors.pink[200],
-                                  borderRadius: BorderRadius.circular(10)),
-                              child: Icon(
-                                Icons.edit,
-                                color: Colors.black,
-                                size: 20,
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Vender Id ",
+                                style: TextStyle(
+                                    color: Colors.grey[800],
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
                               ),
-                            ),
-                          ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              SizedBox(
+                                height: 50,
+                                width: 160,
+                                child: TextFormField(
+                                  // controller: controller.emailController.value,
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'Please enter Name';
+                                    }
+                                    return null;
+                                  },
+                                  decoration: InputDecoration(
+                                    hintText: "0011225",
+                                    fillColor: Colors.white,
+                                    filled: true,
+                                    border: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    errorText:
+                                        _formKey.currentState?.validate() ==
+                                                false
+                                            ? 'Please enter name'
+                                            : null,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
                         ],
                       ),
                       Text(
-                        "Name",
+                        "Vender Name",
                         style: TextStyle(
                             color: Colors.grey[800],
                             fontSize: 20,
@@ -113,7 +140,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                         height: 10,
                       ),
                       Text(
-                        "Designation",
+                        "Owner Name",
                         style: TextStyle(
                             color: Colors.grey[800],
                             fontSize: 20,
@@ -129,13 +156,12 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                           // controller: controller.emailController.value,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter Designation';
+                              return 'Please enter Name';
                             }
                             return null;
                           },
-                          obscureText: true,
                           decoration: InputDecoration(
-                            hintText: "Designation",
+                            hintText: "xyz",
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
@@ -152,7 +178,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             ),
                             errorText:
                                 _formKey.currentState?.validate() == false
-                                    ? 'Please enter Designation'
+                                    ? 'Please enter name'
                                     : null,
                           ),
                         ),
@@ -302,7 +328,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                         height: 10,
                       ),
                       Text(
-                        "Birth Date",
+                        "Vendeor type",
                         style: TextStyle(
                             color: Colors.grey[800],
                             fontSize: 20,
@@ -318,12 +344,12 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                           // controller: controller.emailController.value,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter Birth Date';
+                              return 'Please enter vender type';
                             }
                             return null;
                           },
                           decoration: InputDecoration(
-                            hintText: "10/2/2001",
+                            hintText: "Food Supplier",
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
@@ -340,7 +366,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             ),
                             errorText:
                                 _formKey.currentState?.validate() == false
-                                    ? 'Please enter Birth Date'
+                                    ? 'Please enter food supplier'
                                     : null,
                           ),
                         ),
@@ -349,7 +375,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                         height: 10,
                       ),
                       Text(
-                        "Gender",
+                        "GST Number",
                         style: TextStyle(
                             color: Colors.grey[800],
                             fontSize: 20,
@@ -365,12 +391,12 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                           // controller: controller.emailController.value,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter Gender';
+                              return 'Please enter GST Number';
                             }
                             return null;
                           },
                           decoration: InputDecoration(
-                            hintText: "Male",
+                            hintText: "78JHDGFY8976EGIUY89",
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
@@ -387,10 +413,79 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             ),
                             errorText:
                                 _formKey.currentState?.validate() == false
-                                    ? 'Please enter Gender'
+                                    ? 'Please enter GST Number'
                                     : null,
                           ),
                         ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "Document Number",
+                        style: TextStyle(
+                            color: Colors.grey[800],
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      SizedBox(
+                        height: 60,
+                        width: 500,
+                        child: TextFormField(
+                          // controller: controller.emailController.value,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter Document Number';
+                            }
+                            return null;
+                          },
+                          decoration: InputDecoration(
+                            hintText: "78JHDGFY8976EGIUY89",
+                            fillColor: Colors.white,
+                            filled: true,
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                              ),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.black,
+                              ),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            errorText:
+                                _formKey.currentState?.validate() == false
+                                    ? 'Please enter Document Number'
+                                    : null,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Document Image1",
+                            style: TextStyle(
+                                color: Colors.grey[800],
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "(PNG, JPEG)",
+                            style: TextStyle(
+                              color: Colors.grey[500],
+                              fontSize: 12,
+                            ),
+                          )
+                        ],
                       ),
                       SizedBox(
                         height: 10,
@@ -405,7 +500,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StaffScreen()));
+                                        builder: (context) => VenderPage()));
                               });
                             },
                             child: Container(
@@ -439,7 +534,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StaffScreen()));
+                                        builder: (context) => VenderPage()));
                               });
                             },
                             child: Container(

@@ -31,167 +31,176 @@ class _LoginScreenState extends State<LoginScreen> {
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image.asset('assets/images/app_logo1.png'),
-                Text(
-                  "BLISHBOWL",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22),
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                Text(
-                  "Get Started",
-                  style: TextStyle(
-                      color: Colors.orange[800],
-                      fontWeight: FontWeight.bold,
-                      fontSize: 40),
-                ),
-                Text(
-                  "Please fill your detail to access your account",
-                  style: TextStyle(color: Colors.orange[800]),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      CustomTextField(
-                        controller: emailController,
-                        hintText: 'enter your Email',
-                        errortext: "Please enter email",
-                        icon: Icons.mail,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter email';
-                          }
-                          return null;
-                        },
-                      ),
-                      SizedBox(
-                        height: 25,
-                      ),
-                      CustomTextField(
-                        controller: passwordController,
-                        hintText: "enter your Password",
-                        errortext: "Enter Password",
-                        icon: Icons.remove_red_eye_outlined,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter Password';
-                          }
-                          return null;
-                        },
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 195),
-                        child: TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          ForgotPasswordScreen()));
-                            },
-                            child: Text(
-                              "Forgot Password ?",
-                              style: TextStyle(
-                                  color: Colors.orange[800],
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16),
-                            )),
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      CustomButton(
-                          text: "Login",
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset('assets/images/app_logo1.png'),
+                  Text(
+                    "BLISHBOWL",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22),
+                  ),
+                  SizedBox(
+                    height: 80,
+                  ),
+                  Text(
+                    "Get Started",
+                    style: TextStyle(
+                        color: Colors.orange[800],
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40),
+                  ),
+                  Text(
+                    "Please fill your detail to access your account",
+                    style: TextStyle(color: Colors.orange[800], fontSize: 12),
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        CustomTextField(
+                          controller: emailController,
+                          hintText: 'enter your email',
+                          errortext: "Please enter email",
+                          icon: Icons.mail,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter email';
+                            } else if (!RegExp(
+                                    r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
+                                .hasMatch(value)) {
+                              return 'Please enter a valid email address';
+                            }
+                            return null;
+                          },
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        CustomTextField(
+                          controller: passwordController,
+                          hintText: "enter your password",
+                          errortext: "enter password",
+                          icon: Icons.remove_red_eye_outlined,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter password';
+                            }
+                            return null;
+                          },
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 195),
+                          child: TextButton(
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ForgotPasswordScreen()));
+                              },
+                              child: Text(
+                                "Forgot Password ?",
+                                style: TextStyle(
+                                    color: Colors.orange[800],
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
+                              )),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        CustomButton(
+                          text: "Log in",
                           onTap: () {
                             if (_formKey.currentState?.validate() == true) {
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => DashBord_Page()));
                             }
-                          }),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 30),
-                        child: Row(
+                          },
+                          color: const Color.fromARGB(255, 239, 108, 0),
+                          borderColor: const Color.fromARGB(255, 239, 108, 0),
+                          textColor: Colors.white,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Don't have an Account ?",
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 16),
+                              ),
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                RegistrationScreen()));
+                                  },
+                                  child: Text(
+                                    "Sign Up",
+                                    style: TextStyle(
+                                        color: Colors.orange[800],
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16),
+                                  )),
+                              Spacer(),
+                            ],
+                          ),
+                        ),
+                        Text(
+                          "Or",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
-                              "Don't have an Account ?",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 16),
-                            ),
-                            TextButton(
-                                onPressed: () {
-                                  Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              RegistrationScreen()));
-                                },
-                                child: Text(
-                                  "Sign Up",
-                                  style: TextStyle(
-                                      color: Colors.orange[800],
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16),
+                            CircleAvatar(
+                                radius: 20,
+                                backgroundColor: Colors.white,
+                                child: Image.asset(
+                                  'assets/images/google.png',
+                                  height: 25,
                                 )),
                             SizedBox(
-                              height: 15,
+                              width: 20,
                             ),
+                            CircleAvatar(
+                                radius: 20,
+                                backgroundColor: Colors.white,
+                                child: Image.asset(
+                                  'assets/images/facebook.png',
+                                  height: 25,
+                                )),
                           ],
                         ),
-                      ),
-                      Text(
-                        "OR",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CircleAvatar(
-                              radius: 25,
-                              backgroundColor: Colors.white,
-                              child: Image.asset(
-                                'assets/images/google.png',
-                              )),
-                          SizedBox(
-                            width: 20,
-                          ),
-                          CircleAvatar(
-                              radius: 25,
-                              backgroundColor: Colors.white,
-                              child: Image.asset(
-                                'assets/images/facebook.png',
-                              )),
-                        ],
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

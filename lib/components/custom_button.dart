@@ -2,12 +2,18 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
-  final void Function()? onTap; // Optional: customize text color
+  final void Function()? onTap;
+  final Color color;
+  final Color borderColor;
+  final Color textColor;
 
   const CustomButton({
     Key? key,
     required this.text,
     required this.onTap,
+    required this.color,
+    required this.borderColor,
+    required this.textColor,
   }) : super(key: key);
 
   @override
@@ -15,16 +21,21 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.orange[800],
+        backgroundColor: color,
         shape: RoundedRectangleBorder(
+          side: BorderSide(color: borderColor),
           borderRadius: BorderRadius.circular(50),
         ),
       ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 122, vertical: 12),
-        child: Text(
-          text,
-          style: TextStyle(color: Colors.white, fontSize: 24),
+      child: Container(
+        height: 45,
+        width: 298,
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+                color: textColor, fontSize: 18, fontWeight: FontWeight.bold),
+          ),
         ),
       ),
     );

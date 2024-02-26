@@ -92,7 +92,7 @@ class _ProductScreenState extends State<ProductScreen> {
                       const Spacer(),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
@@ -119,7 +119,7 @@ class _ProductScreenState extends State<ProductScreen> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const MyRestaurant()));
@@ -161,9 +161,12 @@ class _ProductScreenState extends State<ProductScreen> {
                             // hintText: "What you want today",
                             label: const Text(
                               "What you want today",
-                              style: TextStyle(fontSize: 12),
+                              style: TextStyle(fontSize: 10),
                             ),
-                            prefixIcon: const Icon(Icons.search),
+                            prefixIcon: const Icon(
+                              Icons.search,
+                              size: 15,
+                            ),
                             border: OutlineInputBorder(
                               borderSide: const BorderSide(
                                 color: Colors.black,
@@ -191,11 +194,11 @@ class _ProductScreenState extends State<ProductScreen> {
                               borderRadius: BorderRadius.circular(5)),
                           child: const Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 5, vertical: 5),
+                                horizontal: 5, vertical: 10),
                             child: Text(
                               "Add New Product",
                               style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 10,
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -214,11 +217,11 @@ class _ProductScreenState extends State<ProductScreen> {
                               borderRadius: BorderRadius.circular(5)),
                           child: const Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 5, vertical: 5),
+                                horizontal: 5, vertical: 10),
                             child: Text(
                               "Add New Variant",
                               style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 10,
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold),
                             ),

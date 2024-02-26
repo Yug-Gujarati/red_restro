@@ -57,7 +57,7 @@ class _StaffScreenState extends State<StaffScreen> {
                       const Spacer(),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
@@ -84,7 +84,7 @@ class _StaffScreenState extends State<StaffScreen> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const MyRestaurant()));

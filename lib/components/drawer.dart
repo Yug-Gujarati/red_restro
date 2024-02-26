@@ -3,13 +3,13 @@ import 'package:red_restro/components/my_list_titles.dart';
 import 'package:red_restro/screens/customer_screen.dart';
 import 'package:red_restro/screens/dashboard/dashbord_page.dart';
 import 'package:red_restro/screens/kitchen_screen.dart';
-import 'package:red_restro/screens/order_screen.dart';
+import 'package:red_restro/screens/order/order_screen.dart';
 import 'package:red_restro/screens/Products/product_screen.dart';
 import 'package:red_restro/screens/Report/report_screen.dart';
 import 'package:red_restro/screens/Setting/setting_screen.dart';
 import 'package:red_restro/screens/staff/staff_screen.dart';
 import 'package:red_restro/screens/tables/table_screen.dart';
-import 'package:red_restro/screens/vender_page.dart';
+import 'package:red_restro/screens/vender/vender_page.dart';
 
 import '../screens/Auth/login_screen.dart';
 
@@ -29,7 +29,7 @@ class _MyDrawerState extends State<MyDrawer> {
   Widget build(BuildContext context) {
     void dashboardPage() {
       Navigator.pop(context);
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => DashBord_Page(),
@@ -38,7 +38,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
     void settingPage() {
       Navigator.pop(context);
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => SettingScreen(),
@@ -47,7 +47,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
     void orderPage() {
       Navigator.pop(context);
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => OrderScreen(),
@@ -56,7 +56,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
     void venderPage() {
       Navigator.pop(context);
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => VenderPage(),
@@ -65,7 +65,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
     void customerPage() {
       Navigator.pop(context);
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => CustomerScreen(),
@@ -74,7 +74,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
     void productPage() {
       Navigator.pop(context);
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => ProductScreen(),
@@ -83,7 +83,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
     void tablePage() {
       Navigator.pop(context);
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => TableScreen(),
@@ -92,7 +92,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
     void reportPage() {
       Navigator.pop(context);
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => ReportScreen(),
@@ -101,7 +101,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
     void kitchnPage() {
       Navigator.pop(context);
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => KitchenScreen(),
@@ -110,7 +110,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
     void staffPage() {
       Navigator.pop(context);
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => StaffScreen(),

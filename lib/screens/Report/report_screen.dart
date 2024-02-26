@@ -55,7 +55,7 @@ class _ReportScreenState extends State<ReportScreen> {
                       const Spacer(),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
@@ -82,7 +82,7 @@ class _ReportScreenState extends State<ReportScreen> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const MyRestaurant()));

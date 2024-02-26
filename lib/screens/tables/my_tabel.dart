@@ -43,6 +43,7 @@ class _MyTableState extends State<MyTable> {
               numberOfSeats: [2, 4, 8][index % 3],
             ));
     return Material(
+      color: Colors.white,
       child: Container(
         height: 500,
         child: GridView.builder(
