@@ -220,7 +220,7 @@ class _MyReportState extends State<MyReport> {
                     });
                   },
                   child: Container(
-                    width: 120,
+                    width: 110,
                     height: 30,
                     decoration: BoxDecoration(
                         color: isTapIndex == -1
@@ -250,7 +250,7 @@ class _MyReportState extends State<MyReport> {
                     });
                   },
                   child: Container(
-                    width: 120,
+                    width: 110,
                     height: 30,
                     decoration: BoxDecoration(
                         color: isTapIndex == 0

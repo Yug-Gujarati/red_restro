@@ -118,7 +118,8 @@ class _MyDrawerState extends State<MyDrawer> {
     }
 
     return Drawer(
-      backgroundColor: Colors.white,
+      shadowColor: Colors.white,
+      surfaceTintColor: Colors.white,
       child: ListView(
         children: [
           Padding(

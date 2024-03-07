@@ -33,7 +33,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                       "Product name",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
@@ -86,7 +86,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                       "Description",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
@@ -139,7 +139,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                       "Price",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
@@ -194,7 +194,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                           "Discountable",
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 18,
+                              fontSize: 14,
                               fontWeight: FontWeight.bold),
                         ),
                         Spacer(),
@@ -220,7 +220,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                       "Category",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
@@ -270,7 +270,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          width: 110,
+                          width: 100,
                           height: 30,
                           decoration: BoxDecoration(
                               color: Colors.orange[100],
@@ -279,14 +279,14 @@ class _AddNewProductState extends State<AddNewProduct> {
                             child: Text(
                               "Pizaa",
                               style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
                         Container(
-                          width: 110,
+                          width: 100,
                           height: 30,
                           decoration: BoxDecoration(
                               color: Colors.orange[100],
@@ -295,14 +295,14 @@ class _AddNewProductState extends State<AddNewProduct> {
                             child: Text(
                               "Burger",
                               style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
                         Container(
-                          width: 110,
+                          width: 100,
                           height: 30,
                           decoration: BoxDecoration(
                               color: Colors.orange[100],
@@ -311,7 +311,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                             child: Text(
                               "Coke",
                               style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -323,7 +323,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                       height: 5,
                     ),
                     Container(
-                      width: 110,
+                      width: 100,
                       height: 30,
                       decoration: BoxDecoration(
                           color: Colors.orange[100],
@@ -332,7 +332,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                         child: Text(
                           "Panner",
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 12,
                               color: Colors.black,
                               fontWeight: FontWeight.bold),
                         ),

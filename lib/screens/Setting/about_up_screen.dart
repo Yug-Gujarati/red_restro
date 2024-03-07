@@ -237,19 +237,11 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
                   ),
                 ),
               ),
-              TextButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LoginScreen(),
-                        ));
-                  },
-                  child: Text(
-                    "Delete Your Account",
-                    style: TextStyle(
-                        color: Colors.red, fontWeight: FontWeight.bold),
-                  )),
+              Text(
+                "Delete Your Account",
+                style:
+                    TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+              ),
               SizedBox(
                 height: 10,
               ),

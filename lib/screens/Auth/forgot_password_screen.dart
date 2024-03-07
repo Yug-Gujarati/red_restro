@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:red_restro/screens/Auth/login_screen.dart';
 
 import '../../components/custom_button.dart';
 import '../../components/custom_text_field.dart';
-import 'login_screen.dart';
 import 'otp_verify_screen.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
@@ -18,14 +18,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepOrange[50],
-      body: NestedScrollView(
-        headerSliverBuilder: (context, innerBoxIsScrolled) => [
-          SliverAppBar(
-            backgroundColor: Colors.deepOrange[50],
-            elevation: 0,
-          )
-        ],
+        backgroundColor: Colors.deepOrange[50],
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Center(
@@ -35,23 +28,29 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset('assets/images/app_logo1.png'),
-                  const Text(
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.1,
+                  ),
+                  Image.asset(
+                    'assets/images/app_logo1.png',
+                    width: MediaQuery.of(context).size.width * 0.15,
+                  ),
+                  Text(
                     "BLISHBOWL",
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 22),
                   ),
-                  const SizedBox(
-                    height: 80,
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.12,
                   ),
                   Text(
                     "Forgot Password",
                     style: TextStyle(
                         color: Colors.orange[800],
                         fontWeight: FontWeight.bold,
-                        fontSize: 40),
+                        fontSize: 35),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -60,8 +59,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       style: TextStyle(color: Colors.orange[800], fontSize: 12),
                     ),
                   ),
-                  const SizedBox(
-                    height: 25,
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.04,
                   ),
                   Form(
                     key: _formKey,
@@ -83,8 +82,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             return null;
                           },
                         ),
-                        const SizedBox(
-                          height: 5,
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.001,
                         ),
                         Row(
                           children: [
@@ -93,7 +92,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                 style: TextStyle(
                                     color: Colors.orange[800],
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 16)),
+                                    fontSize: 14)),
                             TextButton(
                                 onPressed: () {},
                                 child: Text(
@@ -101,12 +100,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                   style: TextStyle(
                                       color: Colors.orange[800],
                                       fontWeight: FontWeight.w900,
-                                      fontSize: 16),
+                                      fontSize: 14),
                                 )),
                           ],
                         ),
-                        const SizedBox(
-                          height: 25,
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.03,
                         ),
                         CustomButton(
                           text: "Send OTP",
@@ -122,13 +121,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           borderColor: const Color.fromARGB(255, 239, 108, 0),
                           textColor: Colors.white,
                         ),
-                        const SizedBox(
-                          height: 10,
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.02,
                         ),
                         CustomButton(
                           text: 'Cancle',
                           onTap: () {
-                            Navigator.of(context).pop();
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginScreen()));
                           },
                           color: Colors.white,
                           borderColor: const Color.fromARGB(255, 239, 108, 0),
@@ -141,8 +143,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               ),
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

@@ -164,7 +164,7 @@ class _AddTableState extends State<AddTable> {
                     });
                   },
                   child: Container(
-                    width: 120,
+                    width: 110,
                     height: 30,
                     decoration: BoxDecoration(
                         color: isTapIndex == -1
@@ -194,7 +194,7 @@ class _AddTableState extends State<AddTable> {
                     });
                   },
                   child: Container(
-                    width: 120,
+                    width: 110,
                     height: 30,
                     decoration: BoxDecoration(
                         color: isTapIndex == 0

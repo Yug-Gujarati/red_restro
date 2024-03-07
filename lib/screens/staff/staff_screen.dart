@@ -118,7 +118,7 @@ class _StaffScreenState extends State<StaffScreen> {
                     children: [
                       SizedBox(
                         height: 30,
-                        width: 320,
+                        width: 280,
                         child: TextFormField(
                           decoration: InputDecoration(
                             fillColor: Colors.white,
@@ -189,7 +189,7 @@ class _StaffScreenState extends State<StaffScreen> {
                   )
                 else
                   Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(5),
                       child: Column(children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -204,7 +204,7 @@ class _StaffScreenState extends State<StaffScreen> {
                                   "Booking Manager",
                                   style: TextStyle(
                                       color: Colors.black,
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       fontWeight: isTapIndex == -1
                                           ? FontWeight.bold
                                           : FontWeight.normal),
@@ -226,7 +226,7 @@ class _StaffScreenState extends State<StaffScreen> {
                                   "Waiter",
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 14,
+                                    fontSize: 12,
                                     fontWeight: isTapIndex == 0
                                         ? FontWeight.bold
                                         : FontWeight.normal,
@@ -249,7 +249,7 @@ class _StaffScreenState extends State<StaffScreen> {
                                   "Kitchen Manager",
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 14,
+                                    fontSize: 12,
                                     fontWeight: isTapIndex == 1
                                         ? FontWeight.bold
                                         : FontWeight.normal,

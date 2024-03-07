@@ -262,7 +262,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                   padding: const EdgeInsets.only(top: 10),
                                   child: Container(
                                     height: 50,
-                                    width: 250,
+                                    width: 220,
                                     child: ListView.builder(
                                       scrollDirection: Axis.horizontal,
                                       itemCount: productCategories.length,

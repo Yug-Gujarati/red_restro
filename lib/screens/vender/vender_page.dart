@@ -191,7 +191,7 @@ class _VenderPageState extends State<VenderPage> {
                   children: [
                     SizedBox(
                       height: 30,
-                      width: 180,
+                      width: 170,
                       child: TextFormField(
                         decoration: InputDecoration(
                           fillColor: Colors.white,
@@ -222,7 +222,7 @@ class _VenderPageState extends State<VenderPage> {
                     ),
                     Container(
                       height: 30,
-                      width: 115,
+                      width: 110,
                       decoration: BoxDecoration(
                           color: Colors.red[200],
                           borderRadius: BorderRadius.circular(5)),
@@ -232,7 +232,9 @@ class _VenderPageState extends State<VenderPage> {
                           Text(
                             "Vender Type",
                             style: TextStyle(
-                                color: Colors.red, fontWeight: FontWeight.bold),
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12),
                           ),
                           Icon(
                             Icons.arrow_drop_down,

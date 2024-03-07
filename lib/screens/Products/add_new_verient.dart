@@ -34,7 +34,7 @@ class _AddNewVerientState extends State<AddNewVerient> {
                       "Option",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
@@ -81,7 +81,7 @@ class _AddNewVerientState extends State<AddNewVerient> {
                           "Size",
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 20,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
@@ -89,42 +89,45 @@ class _AddNewVerientState extends State<AddNewVerient> {
                         ),
                         Container(
                           height: 30,
-                          width: 80,
+                          width: 70,
                           decoration: BoxDecoration(
                               color: Colors.orange[800],
                               borderRadius: BorderRadius.circular(5)),
                           child: Center(
                             child: Text(
                               "Small",
-                              style: TextStyle(color: Colors.white),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
                             ),
                           ),
                         ),
                         Spacer(),
                         Container(
                           height: 30,
-                          width: 80,
+                          width: 70,
                           decoration: BoxDecoration(
                               color: Colors.orange[800],
                               borderRadius: BorderRadius.circular(5)),
                           child: Center(
                             child: Text(
                               "Medium",
-                              style: TextStyle(color: Colors.white),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
                             ),
                           ),
                         ),
                         Spacer(),
                         Container(
                           height: 30,
-                          width: 80,
+                          width: 70,
                           decoration: BoxDecoration(
                               color: Colors.orange[800],
                               borderRadius: BorderRadius.circular(5)),
                           child: Center(
                             child: Text(
                               "Large",
-                              style: TextStyle(color: Colors.white),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
                             ),
                           ),
                         )
@@ -137,7 +140,7 @@ class _AddNewVerientState extends State<AddNewVerient> {
                       "Description",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
                     SizedBox(

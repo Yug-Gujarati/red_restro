@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:red_restro/components/drawer.dart';
+import 'package:red_restro/screens/dashboard/dashbord_page.dart';
 
 class KitchenScreen extends StatefulWidget {
   const KitchenScreen({super.key});
@@ -28,7 +29,10 @@ class _KitchenScreenState extends State<KitchenScreen> {
                   children: [
                     IconButton(
                         onPressed: () {
-                          Navigator.of(context).pop();
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: ((context) => DashBord_Page())));
                         },
                         icon: const Icon(
                           Icons.arrow_back,
@@ -50,7 +54,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                 padding: const EdgeInsets.all(10),
                 child: Container(
                   width: 500,
-                  height: 570,
+                  height: 580,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
@@ -58,9 +62,9 @@ class _KitchenScreenState extends State<KitchenScreen> {
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,

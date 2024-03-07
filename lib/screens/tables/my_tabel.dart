@@ -94,7 +94,7 @@ class _MyTableState extends State<MyTable> {
                         ),
                       ),
                       Text(
-                        "Seat's: ${table.numberOfSeats} ",
+                        "Seat's: ${table.numberOfSeats}",
                         style: TextStyle(
                           fontSize: 10,
                         ),
