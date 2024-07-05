@@ -5,7 +5,7 @@ class MyListTile extends StatefulWidget {
   final String text;
   final void Function()? onTap;
 
-  MyListTile({
+  const MyListTile({
     Key? key,
     required this.icon,
     required this.text,

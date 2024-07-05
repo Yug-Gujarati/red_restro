@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:red_restro/components/custom_button.dart';
-import 'package:red_restro/components/custom_text_field.dart';
-import 'package:red_restro/screens/dashboard/dashbord_page.dart';
+import 'package:get/get.dart';
+import 'package:red_restro/screens/Auth/registration/registration_controller.dart';
+import '../../../components/custom_button.dart';
+import '../../../components/custom_text_field.dart';
+import '../login/login_screen.dart';
 
-import 'forgot_password_screen.dart';
-import 'registration_screen.dart';
-
-class LoginScreen extends StatefulWidget {
-  LoginScreen({super.key});
+class RegistrationScreen extends StatefulWidget {
+  const RegistrationScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegistrationScreen> createState() => _RegistrationScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegistrationScreenState extends State<RegistrationScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+  registrationScreenController controller = Get.put(registrationScreenController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,22 +35,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   'assets/images/app_logo1.png',
                   width: MediaQuery.of(context).size.width * 0.15,
                 ),
-                Text(
+                const Text(
                   "BLISHBOWL",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22),
+                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.12,
                 ),
                 Text(
-                  "Get Started",
-                  style: TextStyle(
-                      color: Colors.orange[800],
-                      fontWeight: FontWeight.bold,
-                      fontSize: 35),
+                  "Sign Up",
+                  style: TextStyle(color: Colors.orange[800], fontWeight: FontWeight.bold, fontSize: 35),
                 ),
                 Text(
                   "Please fill your detail to access your account",
@@ -67,17 +58,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       CustomTextField(
-                        controller: emailController,
-                        hintText: 'enter your email',
-                        errortext: "Please enter email",
-                        icon: Icons.mail,
+                        controller: controller.nameController.value,
+                        hintText: 'enter your full name',
+                        errortext: "Please enter full name",
+                        icon: Icons.person_rounded,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter email';
-                          } else if (!RegExp(
-                                  r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
-                              .hasMatch(value)) {
-                            return 'Please enter a valid email address';
+                            return 'Please enter full name';
                           }
                           return null;
                         },
@@ -86,51 +73,57 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       CustomTextField(
-                        controller: passwordController,
+                        controller: controller.emailController.value,
+                        hintText: "enter your email",
+                        errortext: "enter email",
+                        icon: Icons.mail,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter email';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
+                      CustomTextField(
+                        controller: controller.passwordController.value,
                         hintText: "enter your password",
                         errortext: "enter password",
                         icon: Icons.remove_red_eye_outlined,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter password';
+                          } else if (value.length < 8) {
+                            return 'Password must be at least 8 characters long';
                           }
                           return null;
                         },
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.001,
+                        height: MediaQuery.of(context).size.height * 0.02,
                       ),
-                      Row(
-                        children: [
-                          Spacer(),
-                          TextButton(
-                              onPressed: () {
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            ForgotPasswordScreen()));
-                              },
-                              child: Text(
-                                "Forgot Password ?",
-                                style: TextStyle(
-                                    color: Colors.orange[800],
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14),
-                              )),
-                        ],
+                      CustomTextField(
+                        controller: controller.confirmPasswordController.value,
+                        hintText: "enter your password",
+                        errortext: "enter password",
+                        icon: Icons.remove_red_eye_outlined,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Confirm password is required';
+                          }
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.03,
                       ),
                       CustomButton(
-                        text: "Log in",
+                        text: "Sign Up",
                         onTap: () {
                           if (_formKey.currentState?.validate() == true) {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => DashBord_Page()));
+                            controller.register();
                           }
                         },
                         color: const Color.fromARGB(255, 239, 108, 0),
@@ -140,40 +133,27 @@ class _LoginScreenState extends State<LoginScreen> {
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
-                              "Don't have an Account ?",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 14),
+                            const Text(
+                              "Alrady have an Account ?",
+                              style: TextStyle(color: Colors.black, fontSize: 14),
                             ),
                             TextButton(
                                 onPressed: () {
-                                  Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              RegistrationScreen()));
+                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
                                 },
                                 child: Text(
-                                  "Sign Up",
-                                  style: TextStyle(
-                                      color: Colors.orange[800],
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14),
+                                  "Log in ",
+                                  style: TextStyle(color: Colors.orange[800], fontWeight: FontWeight.bold, fontSize: 14),
                                 )),
-                            Spacer(),
                           ],
                         ),
                       ),
-                      Text(
+                      const Text(
                         "Or",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -186,7 +166,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 'assets/images/google.png',
                                 height: 25,
                               )),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           CircleAvatar(

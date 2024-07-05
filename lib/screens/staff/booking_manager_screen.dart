@@ -17,11 +17,11 @@ class _BookingManagerScreenState extends State<BookingManagerScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           if (isForm)
-            EditStaffDetail()
+            const EditStaffDetail()
           else
             Column(
               children: [
-                Row(
+                const Row(
                   children: [
                     Text(
                       "B'id",
@@ -42,14 +42,14 @@ class _BookingManagerScreenState extends State<BookingManagerScreen> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
@@ -58,7 +58,7 @@ class _BookingManagerScreenState extends State<BookingManagerScreen> {
                       isForm = true;
                     });
                   },
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "001",
@@ -74,14 +74,14 @@ class _BookingManagerScreenState extends State<BookingManagerScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
@@ -90,7 +90,7 @@ class _BookingManagerScreenState extends State<BookingManagerScreen> {
                       isForm = true;
                     });
                   },
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "002",
@@ -106,14 +106,14 @@ class _BookingManagerScreenState extends State<BookingManagerScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
@@ -122,7 +122,7 @@ class _BookingManagerScreenState extends State<BookingManagerScreen> {
                       isForm = true;
                     });
                   },
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "003",

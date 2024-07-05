@@ -31,12 +31,12 @@ class _AddVenderFormState extends State<AddVenderForm> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          CircleAvatar(
+                          const CircleAvatar(
                             backgroundImage:
                                 AssetImage('assets/images/profile.jpg'),
                             radius: 30,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Column(
@@ -50,7 +50,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                               SizedBox(
@@ -69,13 +69,13 @@ class _AddVenderFormState extends State<AddVenderForm> {
                                     fillColor: Colors.white,
                                     filled: true,
                                     border: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.black,
                                       ),
                                       borderRadius: BorderRadius.circular(5),
                                     ),
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.black,
                                       ),
                                       borderRadius: BorderRadius.circular(5),
@@ -99,7 +99,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -118,13 +118,13 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -136,7 +136,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -146,7 +146,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -165,13 +165,13 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -183,7 +183,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -193,7 +193,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -212,13 +212,13 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -230,7 +230,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -240,7 +240,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -259,13 +259,13 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -277,7 +277,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -287,7 +287,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -306,13 +306,13 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -324,7 +324,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -334,7 +334,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -353,13 +353,13 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -371,7 +371,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -381,7 +381,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -400,13 +400,13 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -418,7 +418,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -428,7 +428,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -447,13 +447,13 @@ class _AddVenderFormState extends State<AddVenderForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -465,7 +465,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -487,7 +487,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -500,7 +500,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => VenderPage()));
+                                        builder: (context) => const VenderPage()));
                               });
                             },
                             child: Container(
@@ -524,7 +524,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           InkWell(
@@ -534,7 +534,7 @@ class _AddVenderFormState extends State<AddVenderForm> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => VenderPage()));
+                                        builder: (context) => const VenderPage()));
                               });
                             },
                             child: Container(

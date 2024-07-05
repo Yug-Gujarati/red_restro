@@ -18,7 +18,7 @@ class _TableScreenState extends State<TableScreen> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
+        return const AlertDialog(
           backgroundColor: Colors.white,
           surfaceTintColor: Colors.white,
           content: AddTable(),
@@ -31,10 +31,10 @@ class _TableScreenState extends State<TableScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
@@ -69,7 +69,7 @@ class _TableScreenState extends State<TableScreen> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => NotificationScreen()));
+                                  builder: (context) => const NotificationScreen()));
                         },
                         child: Container(
                           height: 30,
@@ -95,7 +95,7 @@ class _TableScreenState extends State<TableScreen> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MyRestaurant()));
+                                  builder: (context) => const MyRestaurant()));
                         },
                         child: Container(
                           height: 30,
@@ -117,24 +117,24 @@ class _TableScreenState extends State<TableScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Row(
                             children: [
-                              CircleAvatar(
+                              const CircleAvatar(
                                 backgroundColor: Colors.blue,
                                 radius: 5,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5,
                               ),
                               Text(
@@ -142,14 +142,14 @@ class _TableScreenState extends State<TableScreen> {
                                 style: TextStyle(
                                     color: Colors.grey[800], fontSize: 14),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5,
                               ),
-                              CircleAvatar(
+                              const CircleAvatar(
                                 backgroundColor: Colors.green,
                                 radius: 5,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5,
                               ),
                               Text(
@@ -157,14 +157,14 @@ class _TableScreenState extends State<TableScreen> {
                                 style: TextStyle(
                                     color: Colors.grey[800], fontSize: 14),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5,
                               ),
-                              CircleAvatar(
+                              const CircleAvatar(
                                 backgroundColor: Colors.red,
                                 radius: 5,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5,
                               ),
                               Text(
@@ -172,7 +172,7 @@ class _TableScreenState extends State<TableScreen> {
                                 style: TextStyle(
                                     color: Colors.grey[800], fontSize: 14),
                               ),
-                              Spacer(),
+                              const Spacer(),
                               InkWell(
                                 onTap: () {
                                   showOrderDetailsDialog();
@@ -196,10 +196,10 @@ class _TableScreenState extends State<TableScreen> {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.all(10),
                             child: MyTable(),
                           ),

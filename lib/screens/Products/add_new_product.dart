@@ -29,14 +29,14 @@ class _AddNewProductState extends State<AddNewProduct> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "Product name",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     SizedBox(
@@ -65,7 +65,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                             borderSide: BorderSide(
                               color: _formKey.currentState?.validate() == false
                                   ? Colors.red
-                                  : Color.fromARGB(255, 255, 243, 224),
+                                  : const Color.fromARGB(255, 255, 243, 224),
                             ),
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -79,17 +79,17 @@ class _AddNewProductState extends State<AddNewProduct> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       "Description",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     SizedBox(
@@ -110,7 +110,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                             borderSide: BorderSide(
                               color: _formKey.currentState?.validate() == false
                                   ? Colors.red
-                                  : Color.fromARGB(255, 255, 243, 224),
+                                  : const Color.fromARGB(255, 255, 243, 224),
                             ),
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -118,7 +118,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                             borderSide: BorderSide(
                               color: _formKey.currentState?.validate() == false
                                   ? Colors.red
-                                  : Color.fromARGB(255, 255, 243, 224),
+                                  : const Color.fromARGB(255, 255, 243, 224),
                             ),
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -132,17 +132,17 @@ class _AddNewProductState extends State<AddNewProduct> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       "Price",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     SizedBox(
@@ -163,7 +163,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                             borderSide: BorderSide(
                               color: _formKey.currentState?.validate() == false
                                   ? Colors.red
-                                  : Color.fromARGB(255, 255, 243, 224),
+                                  : const Color.fromARGB(255, 255, 243, 224),
                             ),
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -171,7 +171,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                             borderSide: BorderSide(
                               color: _formKey.currentState?.validate() == false
                                   ? Colors.red
-                                  : Color.fromARGB(255, 255, 243, 224),
+                                  : const Color.fromARGB(255, 255, 243, 224),
                             ),
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -185,19 +185,19 @@ class _AddNewProductState extends State<AddNewProduct> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           "Discountable",
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 14,
                               fontWeight: FontWeight.bold),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         SizedBox(
                           height: 10,
                           width: 10,
@@ -213,10 +213,10 @@ class _AddNewProductState extends State<AddNewProduct> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       "Category",
                       style: TextStyle(
                           color: Colors.black,
@@ -241,7 +241,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                             borderSide: BorderSide(
                               color: _formKey.currentState?.validate() == false
                                   ? Colors.red
-                                  : Color.fromARGB(255, 255, 243, 224),
+                                  : const Color.fromARGB(255, 255, 243, 224),
                             ),
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -249,7 +249,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                             borderSide: BorderSide(
                               color: _formKey.currentState?.validate() == false
                                   ? Colors.red
-                                  : Color.fromARGB(255, 255, 243, 224),
+                                  : const Color.fromARGB(255, 255, 243, 224),
                             ),
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -263,7 +263,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
@@ -275,7 +275,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                           decoration: BoxDecoration(
                               color: Colors.orange[100],
                               borderRadius: BorderRadius.circular(5)),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Pizaa",
                               style: TextStyle(
@@ -291,7 +291,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                           decoration: BoxDecoration(
                               color: Colors.orange[100],
                               borderRadius: BorderRadius.circular(5)),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Burger",
                               style: TextStyle(
@@ -307,7 +307,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                           decoration: BoxDecoration(
                               color: Colors.orange[100],
                               borderRadius: BorderRadius.circular(5)),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Coke",
                               style: TextStyle(
@@ -319,7 +319,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Container(
@@ -328,7 +328,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                       decoration: BoxDecoration(
                           color: Colors.orange[100],
                           borderRadius: BorderRadius.circular(5)),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "Panner",
                           style: TextStyle(
@@ -338,7 +338,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Row(
@@ -351,7 +351,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ProductScreen()));
+                                      builder: (context) => const ProductScreen()));
                             });
                           },
                           child: Container(
@@ -375,7 +375,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         InkWell(
@@ -385,7 +385,7 @@ class _AddNewProductState extends State<AddNewProduct> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ProductScreen()));
+                                      builder: (context) => const ProductScreen()));
                             });
                           },
                           child: Container(

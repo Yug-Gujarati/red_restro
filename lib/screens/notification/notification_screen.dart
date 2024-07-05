@@ -17,10 +17,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
@@ -38,10 +38,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           }),
                     ),
                     const Spacer(),
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     ),
-                    Text(
+                    const Text(
                       "Notification",
                       style: TextStyle(
                           color: Colors.black,
@@ -51,7 +51,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                     const SizedBox(
                       width: 10,
                     ),
-                    Spacer(),
+                    const Spacer(),
                     InkWell(
                       onTap: () {},
                       child: Container(
@@ -78,7 +78,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MyRestaurant()));
+                                builder: (context) => const MyRestaurant()));
                       },
                       child: Container(
                         height: 30,
@@ -98,7 +98,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
@@ -119,49 +119,49 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => SettingScreen()));
+                                      builder: (context) => const SettingScreen()));
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.arrow_back,
                               color: Colors.black,
                             ),
                           ),
-                          Text(
+                          const Text(
                             "Today",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
-                          NotificationMessage(),
-                          NotificationMessage(),
-                          NotificationMessage(),
-                          NotificationMessage(),
-                          NotificationMessage(),
-                          NotificationMessage(),
-                          NotificationMessage(),
-                          Text(
+                          const NotificationMessage(),
+                          const NotificationMessage(),
+                          const NotificationMessage(),
+                          const NotificationMessage(),
+                          const NotificationMessage(),
+                          const NotificationMessage(),
+                          const NotificationMessage(),
+                          const Text(
                             "Yesterday",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
-                          NotificationMessage(),
-                          NotificationMessage(),
-                          NotificationMessage(),
-                          NotificationMessage(),
-                          Text(
+                          const NotificationMessage(),
+                          const NotificationMessage(),
+                          const NotificationMessage(),
+                          const NotificationMessage(),
+                          const Text(
                             "1 week ago",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
-                          NotificationMessage(),
-                          NotificationMessage(),
-                          NotificationMessage(),
-                          NotificationMessage(),
+                          const NotificationMessage(),
+                          const NotificationMessage(),
+                          const NotificationMessage(),
+                          const NotificationMessage(),
                         ],
                       ),
                     ),

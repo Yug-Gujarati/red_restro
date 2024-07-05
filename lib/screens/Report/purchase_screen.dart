@@ -14,7 +14,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
+        return const AlertDialog(
           backgroundColor: Colors.white,
           surfaceTintColor: Colors.white,
           content: MyReport(),
@@ -30,27 +30,27 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
         return AlertDialog(
           backgroundColor: Colors.white,
           surfaceTintColor: Colors.white,
-          content: Container(
+          content: SizedBox(
             height: 200,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
+                const Icon(
                   Icons.arrow_circle_down_outlined,
                   color: Colors.green,
                   size: 80,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   'Report Downloaded',
                   style: TextStyle(
                       fontSize: 24,
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
@@ -65,7 +65,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                     decoration: BoxDecoration(
                         color: Colors.orange[800],
                         borderRadius: BorderRadius.circular(5)),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Save",
                         style: TextStyle(
@@ -121,14 +121,14 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Row(
                 children: [
-                  Text(
+                  const Text(
                     "Past 7 days",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   InkWell(
                     onTap: () {
                       reportShow();
@@ -139,7 +139,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 156, 255, 43),
                           borderRadius: BorderRadius.circular(10)),
-                      child: Icon(
+                      child: const Icon(
                         Icons.filter_alt,
                         color: Colors.black,
                         size: 20,
@@ -150,7 +150,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: GestureDetector(
                 onTap: () {
                   showMessage();
@@ -169,18 +169,18 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                           Row(
                             children: [
                               Text(sale['date']!),
-                              SizedBox(
+                              const SizedBox(
                                 width: 30,
                               ),
                               Text(sale['day']!),
-                              Spacer(),
+                              const Spacer(),
                               Container(
                                 height: 30,
                                 width: 90,
                                 decoration: BoxDecoration(
                                     color: Colors.orange[800],
                                     borderRadius: BorderRadius.circular(5)),
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     "Get Report",
                                     style: TextStyle(color: Colors.white),
@@ -200,8 +200,8 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
               thickness: 2,
               color: Colors.grey[400],
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
               child: Row(
                 children: [
                   Text(
@@ -213,7 +213,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: GestureDetector(
                 onTap: () {
                   showMessage();
@@ -232,11 +232,11 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                           Row(
                             children: [
                               Text(sale['date']!),
-                              SizedBox(
+                              const SizedBox(
                                 width: 30,
                               ),
                               Text(sale['day']!),
-                              Spacer(),
+                              const Spacer(),
                               InkWell(
                                 onTap: () {},
                                 child: Container(
@@ -245,7 +245,7 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                                   decoration: BoxDecoration(
                                       color: Colors.orange[800],
                                       borderRadius: BorderRadius.circular(5)),
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       "Get Report",
                                       style: TextStyle(color: Colors.white),

@@ -408,8 +408,8 @@ class _EditOrderFormState extends State<EditOrderForm> {
                               ),
                             ),
                           ],
-                          connectorColor: MaterialStatePropertyAll(
-                              const Color.fromARGB(255, 239, 108, 0)),
+                          connectorColor: const WidgetStatePropertyAll(
+                              Color.fromARGB(255, 239, 108, 0)),
                           onStepTapped: (int newIndex) {
                             setState(() {
                               _currentStep = newIndex;

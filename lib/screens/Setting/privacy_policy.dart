@@ -11,7 +11,7 @@ class PrivacyPolicy extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
@@ -23,16 +23,16 @@ class PrivacyPolicy extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back,
                         color: Colors.black,
                       ),
                     ),
                     const Spacer(),
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     ),
-                    Text(
+                    const Text(
                       "Privacy Policy",
                       style: TextStyle(
                           color: Colors.black,
@@ -42,13 +42,13 @@ class PrivacyPolicy extends StatelessWidget {
                     const SizedBox(
                       width: 10,
                     ),
-                    Spacer(),
+                    const Spacer(),
                     InkWell(
                       onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => NotificationScreen()));
+                                builder: (context) => const NotificationScreen()));
                       },
                       child: Container(
                         height: 30,
@@ -74,7 +74,7 @@ class PrivacyPolicy extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MyRestaurant()));
+                                builder: (context) => const MyRestaurant()));
                       },
                       child: Container(
                         height: 30,
@@ -94,7 +94,7 @@ class PrivacyPolicy extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Padding(
@@ -104,7 +104,7 @@ class PrivacyPolicy extends StatelessWidget {
                     style: TextStyle(fontSize: 16, color: Colors.grey[800]),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Padding(
@@ -114,7 +114,7 @@ class PrivacyPolicy extends StatelessWidget {
                     style: TextStyle(fontSize: 16, color: Colors.grey[800]),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Padding(

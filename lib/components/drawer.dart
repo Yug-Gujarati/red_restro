@@ -11,7 +11,7 @@ import 'package:red_restro/screens/staff/staff_screen.dart';
 import 'package:red_restro/screens/tables/table_screen.dart';
 import 'package:red_restro/screens/vender/vender_page.dart';
 
-import '../screens/Auth/login_screen.dart';
+import '../screens/Auth/login/login_screen.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({
@@ -32,7 +32,7 @@ class _MyDrawerState extends State<MyDrawer> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => DashBord_Page(),
+            builder: (context) => const DashBord_Page(),
           ));
     }
 
@@ -41,7 +41,7 @@ class _MyDrawerState extends State<MyDrawer> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => SettingScreen(),
+            builder: (context) => const SettingScreen(),
           ));
     }
 
@@ -50,7 +50,7 @@ class _MyDrawerState extends State<MyDrawer> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => OrderScreen(),
+            builder: (context) => const OrderScreen(),
           ));
     }
 
@@ -59,7 +59,7 @@ class _MyDrawerState extends State<MyDrawer> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => VenderPage(),
+            builder: (context) => const VenderPage(),
           ));
     }
 
@@ -68,7 +68,7 @@ class _MyDrawerState extends State<MyDrawer> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => CustomerScreen(),
+            builder: (context) => const CustomerScreen(),
           ));
     }
 
@@ -77,7 +77,7 @@ class _MyDrawerState extends State<MyDrawer> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => ProductScreen(),
+            builder: (context) => const ProductScreen(),
           ));
     }
 
@@ -86,7 +86,7 @@ class _MyDrawerState extends State<MyDrawer> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => TableScreen(),
+            builder: (context) => const TableScreen(),
           ));
     }
 
@@ -95,7 +95,7 @@ class _MyDrawerState extends State<MyDrawer> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => ReportScreen(),
+            builder: (context) => const ReportScreen(),
           ));
     }
 
@@ -104,7 +104,7 @@ class _MyDrawerState extends State<MyDrawer> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => KitchenScreen(),
+            builder: (context) => const KitchenScreen(),
           ));
     }
 
@@ -113,7 +113,7 @@ class _MyDrawerState extends State<MyDrawer> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => StaffScreen(),
+            builder: (context) => const StaffScreen(),
           ));
     }
 
@@ -125,7 +125,7 @@ class _MyDrawerState extends State<MyDrawer> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
             child: ListTile(
-              leading: Container(
+              leading: SizedBox(
                 height: 30,
                 width: 30,
                 child: Image.asset(
@@ -133,7 +133,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   fit: BoxFit.cover,
                 ),
               ),
-              title: Text(
+              title: const Text(
                 "BLISHBOWL",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -142,7 +142,7 @@ class _MyDrawerState extends State<MyDrawer> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 30),
+            padding: const EdgeInsets.only(left: 30),
             child: Column(
               children: [
                 MyListTile(
@@ -231,7 +231,7 @@ class _MyDrawerState extends State<MyDrawer> {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SettingScreen(),
+                          builder: (context) => const SettingScreen(),
                         ));
                     setState(() {
                       tappedIndex = 8;
@@ -272,10 +272,10 @@ class _MyDrawerState extends State<MyDrawer> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => LoginScreen(),
+                      builder: (context) => const LoginScreen(),
                     ));
               },
-              title: Icon(
+              title: const Icon(
                 Icons.arrow_right,
                 color: Colors.black,
                 size: 40,

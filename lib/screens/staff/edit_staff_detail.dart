@@ -37,13 +37,13 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (Context) => StaffScreen()));
+                                        builder: (Context) => const StaffScreen()));
                               },
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_back,
                                 color: Colors.black,
                               )),
-                          CircleAvatar(
+                          const CircleAvatar(
                             backgroundImage:
                                 AssetImage('assets/images/profile.jpg'),
                             radius: 50,
@@ -56,7 +56,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                               decoration: BoxDecoration(
                                   color: Colors.pink[200],
                                   borderRadius: BorderRadius.circular(10)),
-                              child: Icon(
+                              child: const Icon(
                                 Icons.edit,
                                 color: Colors.black,
                                 size: 20,
@@ -72,7 +72,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -91,13 +91,13 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -109,7 +109,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -119,7 +119,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -139,13 +139,13 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -157,7 +157,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -167,7 +167,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -186,13 +186,13 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -204,7 +204,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -214,7 +214,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -233,13 +233,13 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -251,7 +251,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -261,7 +261,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -280,13 +280,13 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -298,7 +298,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -308,7 +308,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -327,13 +327,13 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -345,7 +345,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -355,7 +355,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -374,13 +374,13 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -392,7 +392,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -405,7 +405,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StaffScreen()));
+                                        builder: (context) => const StaffScreen()));
                               });
                             },
                             child: Container(
@@ -429,7 +429,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           InkWell(
@@ -439,7 +439,7 @@ class _EditStaffDetailState extends State<EditStaffDetail> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StaffScreen()));
+                                        builder: (context) => const StaffScreen()));
                               });
                             },
                             child: Container(

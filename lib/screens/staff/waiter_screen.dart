@@ -17,11 +17,11 @@ class _WaiterScreenState extends State<WaiterScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           if (isForm)
-            EditStaffDetail()
+            const EditStaffDetail()
           else
             Column(
               children: [
-                Row(
+                const Row(
                   children: [
                     Text(
                       "B'id",
@@ -42,14 +42,14 @@ class _WaiterScreenState extends State<WaiterScreen> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
@@ -58,7 +58,7 @@ class _WaiterScreenState extends State<WaiterScreen> {
                       isForm = true;
                     });
                   },
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "001",
@@ -74,14 +74,14 @@ class _WaiterScreenState extends State<WaiterScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
@@ -90,7 +90,7 @@ class _WaiterScreenState extends State<WaiterScreen> {
                       isForm = true;
                     });
                   },
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "002",
@@ -106,14 +106,14 @@ class _WaiterScreenState extends State<WaiterScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
@@ -122,7 +122,7 @@ class _WaiterScreenState extends State<WaiterScreen> {
                       isForm = true;
                     });
                   },
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "003",
@@ -138,19 +138,19 @@ class _WaiterScreenState extends State<WaiterScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
                   onTap: () {},
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "004",
@@ -166,19 +166,19 @@ class _WaiterScreenState extends State<WaiterScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
                   onTap: () {},
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "005",
@@ -194,19 +194,19 @@ class _WaiterScreenState extends State<WaiterScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
                   onTap: () {},
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "006",
@@ -222,19 +222,19 @@ class _WaiterScreenState extends State<WaiterScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
                   onTap: () {},
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "007",
@@ -250,19 +250,19 @@ class _WaiterScreenState extends State<WaiterScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
                   onTap: () {},
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "008",
@@ -278,19 +278,19 @@ class _WaiterScreenState extends State<WaiterScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
                   onTap: () {},
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "009",

@@ -5,7 +5,7 @@ import 'Setting/my_restaurant.dart';
 import 'notification/notification_screen.dart';
 
 class CustomerScreen extends StatefulWidget {
-  CustomerScreen({super.key});
+  const CustomerScreen({super.key});
 
   @override
   State<CustomerScreen> createState() => _CustomerScreenState();
@@ -77,10 +77,10 @@ class _CustomerScreenState extends State<CustomerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 10),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
@@ -109,13 +109,13 @@ class _CustomerScreenState extends State<CustomerScreen> {
                             fontWeight: FontWeight.bold,
                             fontSize: 24),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       InkWell(
                         onTap: () {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => NotificationScreen()));
+                                  builder: (context) => const NotificationScreen()));
                         },
                         child: Container(
                           height: 30,
@@ -141,7 +141,7 @@ class _CustomerScreenState extends State<CustomerScreen> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MyRestaurant()));
+                                  builder: (context) => const MyRestaurant()));
                         },
                         child: Container(
                           height: 30,
@@ -167,7 +167,7 @@ class _CustomerScreenState extends State<CustomerScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'Date: ',
                         style: TextStyle(
                             color: Colors.black,
@@ -179,8 +179,8 @@ class _CustomerScreenState extends State<CustomerScreen> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(5),
                             border: Border.all(
-                                color: Color.fromARGB(255, 118, 118, 118))),
-                        child: Padding(
+                                color: const Color.fromARGB(255, 118, 118, 118))),
+                        child: const Padding(
                           padding:
                               EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                           child: Text(
@@ -192,14 +192,14 @@ class _CustomerScreenState extends State<CustomerScreen> {
                           ),
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 118, 118, 118),
+                            color: const Color.fromARGB(255, 118, 118, 118),
                             borderRadius: BorderRadius.circular(5),
                             border: Border.all(
-                                color: Color.fromARGB(255, 118, 118, 118))),
-                        child: Padding(
+                                color: const Color.fromARGB(255, 118, 118, 118))),
+                        child: const Padding(
                           padding:
                               EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                           child: Text(
@@ -211,8 +211,8 @@ class _CustomerScreenState extends State<CustomerScreen> {
                           ),
                         ),
                       ),
-                      Spacer(),
-                      Text(
+                      const Spacer(),
+                      const Text(
                         'Show Entry: ',
                         style: TextStyle(
                             color: Colors.black,
@@ -224,8 +224,8 @@ class _CustomerScreenState extends State<CustomerScreen> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(5),
                             border: Border.all(
-                                color: Color.fromARGB(255, 118, 118, 118))),
-                        child: Padding(
+                                color: const Color.fromARGB(255, 118, 118, 118))),
+                        child: const Padding(
                           padding:
                               EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                           child: Row(
@@ -244,8 +244,8 @@ class _CustomerScreenState extends State<CustomerScreen> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
+                const Padding(
+                  padding: EdgeInsets.all(10.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -330,35 +330,35 @@ class _CustomerScreenState extends State<CustomerScreen> {
                                         children: [
                                           Text(
                                             orders[index]['id']!,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 10),
                                           ),
-                                          Spacer(),
+                                          const Spacer(),
                                           Text(
                                             orders[index]['date']!,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 10),
                                           ),
-                                          Spacer(),
+                                          const Spacer(),
                                           Text(
                                             orders[index]['name']!,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 10),
                                           ),
-                                          Spacer(),
+                                          const Spacer(),
                                           Text(
                                             orders[index]['address']!,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 10),
                                           ),
-                                          Spacer(),
+                                          const Spacer(),
                                           Text(
                                             orders[index]['phone']!,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 10),
                                           ),

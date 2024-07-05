@@ -17,10 +17,10 @@ class _SettingScreenState extends State<SettingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -38,10 +38,10 @@ class _SettingScreenState extends State<SettingScreen> {
                         }),
                   ),
                   const Spacer(),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
-                  Text(
+                  const Text(
                     "Setting",
                     style: TextStyle(
                         color: Colors.black,
@@ -51,13 +51,13 @@ class _SettingScreenState extends State<SettingScreen> {
                   const SizedBox(
                     width: 10,
                   ),
-                  Spacer(),
+                  const Spacer(),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => NotificationScreen()));
+                              builder: (context) => const NotificationScreen()));
                     },
                     child: Container(
                       height: 30,
@@ -83,7 +83,7 @@ class _SettingScreenState extends State<SettingScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MyRestaurant()));
+                              builder: (context) => const MyRestaurant()));
                     },
                     child: Container(
                       height: 30,
@@ -103,7 +103,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SizedBox(
@@ -114,7 +114,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     fillColor: Colors.white,
                     filled: true,
                     // hintText: "What you want today",
-                    label: Text(
+                    label: const Text(
                       "What you want today",
                       style: TextStyle(fontSize: 14),
                     ),
@@ -134,7 +134,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Padding(
@@ -144,7 +144,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => MyRestaurant()));
+                            builder: (context) => const MyRestaurant()));
                   },
                   child: Row(
                     children: [
@@ -155,8 +155,8 @@ class _SettingScreenState extends State<SettingScreen> {
                             fontSize: 22,
                             fontWeight: FontWeight.bold),
                       ),
-                      Spacer(),
-                      Icon(
+                      const Spacer(),
+                      const Icon(
                         Icons.arrow_right,
                         size: 40,
                         color: Colors.black,
@@ -176,7 +176,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => NotificationScreen()));
+                            builder: (context) => const NotificationScreen()));
                   },
                   child: Row(
                     children: [
@@ -187,8 +187,8 @@ class _SettingScreenState extends State<SettingScreen> {
                             fontSize: 22,
                             fontWeight: FontWeight.bold),
                       ),
-                      Spacer(),
-                      Icon(
+                      const Spacer(),
+                      const Icon(
                         Icons.arrow_right,
                         size: 40,
                         color: Colors.black,
@@ -208,7 +208,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => AboutUsScreeen(),
+                          builder: (context) => const AboutUsScreeen(),
                         ));
                   },
                   child: Row(
@@ -220,8 +220,8 @@ class _SettingScreenState extends State<SettingScreen> {
                             fontSize: 22,
                             fontWeight: FontWeight.bold),
                       ),
-                      Spacer(),
-                      Icon(
+                      const Spacer(),
+                      const Icon(
                         Icons.arrow_right,
                         size: 40,
                         color: Colors.black,
@@ -235,10 +235,10 @@ class _SettingScreenState extends State<SettingScreen> {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => AboutUsScreeen(),
+                          builder: (context) => const AboutUsScreeen(),
                         ));
                   },
-                  child: Text(
+                  child: const Text(
                     "Delete Your Account",
                     style: TextStyle(
                         color: Colors.red, fontWeight: FontWeight.bold),

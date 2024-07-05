@@ -14,20 +14,20 @@ class _AddTableState extends State<AddTable> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Container(
+      child: SizedBox(
         height: 250,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Table Datail",
               style: TextStyle(
                   fontSize: 24,
                   color: Colors.black,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -35,13 +35,13 @@ class _AddTableState extends State<AddTable> {
               height: 1,
               color: Colors.grey[800],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
+                const Text(
                   "Table No: ",
                   style: TextStyle(
                       fontSize: 20,
@@ -97,7 +97,7 @@ class _AddTableState extends State<AddTable> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
+                const Text(
                   "Table Size: ",
                   style: TextStyle(
                       fontSize: 20,
@@ -150,7 +150,7 @@ class _AddTableState extends State<AddTable> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -183,7 +183,7 @@ class _AddTableState extends State<AddTable> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 InkWell(

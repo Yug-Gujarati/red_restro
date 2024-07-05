@@ -39,14 +39,14 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
                         height: 60,
                         width: 500,
                         child: DropdownButtonFormField<String>(
-                          key: ValueKey('potision'),
+                          key: const ValueKey('potision'),
                           value: selectedPotision,
                           items: potisions
                               .map((potision) => DropdownMenuItem<String>(
@@ -60,11 +60,11 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
+                              borderSide: const BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
+                              borderSide: const BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             errorText:
@@ -78,7 +78,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                               : null,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -88,7 +88,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -107,13 +107,13 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -125,7 +125,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -135,7 +135,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -154,13 +154,13 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -172,7 +172,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -182,7 +182,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -201,13 +201,13 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -219,7 +219,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -229,7 +229,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -249,13 +249,13 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -267,7 +267,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -277,7 +277,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -296,13 +296,13 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -314,7 +314,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -324,7 +324,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
@@ -343,13 +343,13 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.black,
                               ),
                               borderRadius: BorderRadius.circular(5),
@@ -361,7 +361,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -371,14 +371,14 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       SizedBox(
                         height: 60,
                         width: 500,
                         child: DropdownButtonFormField<String>(
-                          key: ValueKey('gender'),
+                          key: const ValueKey('gender'),
                           value: selectedGender,
                           items: genders
                               .map((gender) => DropdownMenuItem<String>(
@@ -392,11 +392,11 @@ class _AddDetailFormState extends State<AddDetailForm> {
                             fillColor: Colors.white,
                             filled: true,
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
+                              borderSide: const BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
+                              borderSide: const BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             errorText:
@@ -410,7 +410,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                               : null,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -423,7 +423,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StaffScreen()));
+                                        builder: (context) => const StaffScreen()));
                               });
                             },
                             child: Container(
@@ -447,7 +447,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           InkWell(
@@ -457,7 +457,7 @@ class _AddDetailFormState extends State<AddDetailForm> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StaffScreen()));
+                                        builder: (context) => const StaffScreen()));
                               });
                             },
                             child: Container(

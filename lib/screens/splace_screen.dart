@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'Auth/login_screen.dart';
+import 'Auth/login/login_screen.dart';
 
 class SplaceScreen extends StatefulWidget {
   const SplaceScreen({super.key});
@@ -16,11 +16,11 @@ class _SplaceScreenState extends State<SplaceScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 5),
+        const Duration(seconds: 5),
         () => Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => LoginScreen(),
+              builder: (context) => const LoginScreen(),
             )));
   }
 
@@ -33,12 +33,9 @@ class _SplaceScreenState extends State<SplaceScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset("assets/images/app_logo.png"),
-            Text(
+            const Text(
               "BLISHBOWL",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24),
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
             )
           ],
         ),

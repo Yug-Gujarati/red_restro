@@ -23,10 +23,10 @@ class _StaffScreenState extends State<StaffScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
@@ -156,7 +156,7 @@ class _StaffScreenState extends State<StaffScreen> {
                             decoration: BoxDecoration(
                                 color: Colors.red[200],
                                 borderRadius: BorderRadius.circular(5)),
-                            child: Center(
+                            child: const Center(
                                 child: Icon(
                               Icons.person_add,
                               color: Colors.black,
@@ -168,7 +168,7 @@ class _StaffScreenState extends State<StaffScreen> {
                 ),
                 if (formOpen)
                   Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Container(
                       height: 600,
                       width: 500,
@@ -176,10 +176,10 @@ class _StaffScreenState extends State<StaffScreen> {
                         color: Colors.grey[200],
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: SingleChildScrollView(
+                      child: const SingleChildScrollView(
                         scrollDirection: Axis.vertical,
                         child: Padding(
-                          padding: const EdgeInsets.all(1.0),
+                          padding: EdgeInsets.all(1.0),
                           child: Column(
                             children: [AddDetailForm()],
                           ),
@@ -189,7 +189,7 @@ class _StaffScreenState extends State<StaffScreen> {
                   )
                 else
                   Padding(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       child: Column(children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -267,11 +267,11 @@ class _StaffScreenState extends State<StaffScreen> {
                             child: Column(
                               children: [
                                 if (isTapIndex == -1)
-                                  BookingManagerScreen()
+                                  const BookingManagerScreen()
                                 else if (isTapIndex == 0)
-                                  WaiterScreen()
+                                  const WaiterScreen()
                                 else if (isTapIndex == 1)
-                                  KitchenManagerScreen()
+                                  const KitchenManagerScreen()
                               ],
                             ),
                           ),

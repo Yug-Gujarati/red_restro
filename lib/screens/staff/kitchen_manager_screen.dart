@@ -17,11 +17,11 @@ class _KitchenManagerScreenState extends State<KitchenManagerScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           if (isForm)
-            EditStaffDetail()
+            const EditStaffDetail()
           else
             Column(
               children: [
-                Row(
+                const Row(
                   children: [
                     Text(
                       "B'id",
@@ -42,14 +42,14 @@ class _KitchenManagerScreenState extends State<KitchenManagerScreen> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
@@ -58,7 +58,7 @@ class _KitchenManagerScreenState extends State<KitchenManagerScreen> {
                       isForm = true;
                     });
                   },
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "001",
@@ -74,14 +74,14 @@ class _KitchenManagerScreenState extends State<KitchenManagerScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Divider(
                   color: Colors.grey[400],
                   height: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 InkWell(
@@ -90,7 +90,7 @@ class _KitchenManagerScreenState extends State<KitchenManagerScreen> {
                       isForm = true;
                     });
                   },
-                  child: Row(
+                  child: const Row(
                     children: [
                       Text(
                         "002",

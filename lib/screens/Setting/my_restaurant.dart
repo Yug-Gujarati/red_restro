@@ -11,10 +11,10 @@ class MyRestaurant extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -32,10 +32,10 @@ class MyRestaurant extends StatelessWidget {
                         }),
                   ),
                   const Spacer(),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
-                  Text(
+                  const Text(
                     "My Restaurant",
                     style: TextStyle(
                         color: Colors.black,
@@ -45,13 +45,13 @@ class MyRestaurant extends StatelessWidget {
                   const SizedBox(
                     width: 10,
                   ),
-                  Spacer(),
+                  const Spacer(),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => NotificationScreen()));
+                              builder: (context) => const NotificationScreen()));
                     },
                     child: Container(
                       height: 30,
@@ -92,7 +92,7 @@ class MyRestaurant extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -101,7 +101,7 @@ class MyRestaurant extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -112,14 +112,14 @@ class MyRestaurant extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => SettingScreen()));
+                                      builder: (context) => const SettingScreen()));
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.arrow_back,
                               color: Colors.black,
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           InkWell(
                             onTap: () {},
                             child: Container(
@@ -128,7 +128,7 @@ class MyRestaurant extends StatelessWidget {
                               decoration: BoxDecoration(
                                   color: Colors.pink[200],
                                   borderRadius: BorderRadius.circular(10)),
-                              child: Icon(
+                              child: const Icon(
                                 Icons.edit,
                                 color: Colors.black,
                                 size: 20,
@@ -137,7 +137,7 @@ class MyRestaurant extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Text(
+                      const Text(
                         "General",
                         style: TextStyle(
                             color: Colors.black,
@@ -152,7 +152,7 @@ class MyRestaurant extends StatelessWidget {
                             border: Border.all(color: Colors.black),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(20),
+                            padding: const EdgeInsets.all(20),
                             child: Icon(
                               Icons.add_photo_alternate,
                               color: Colors.grey[800],
@@ -161,11 +161,11 @@ class MyRestaurant extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 10.0),
+                        padding: const EdgeInsets.only(left: 10.0),
                         child: RichText(
                           text: TextSpan(
                             style: TextStyle(
@@ -198,19 +198,19 @@ class MyRestaurant extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      Text(
+                      const Text(
                         "Address",
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Padding(
-                        padding: EdgeInsets.only(left: 10.0),
+                        padding: const EdgeInsets.only(left: 10.0),
                         child: RichText(
                           text: TextSpan(
                             style: TextStyle(
@@ -244,19 +244,19 @@ class MyRestaurant extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      Text(
+                      const Text(
                         "Billing",
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Padding(
-                        padding: EdgeInsets.only(left: 10.0),
+                        padding: const EdgeInsets.only(left: 10.0),
                         child: RichText(
                           text: TextSpan(
                             style: TextStyle(
@@ -295,31 +295,31 @@ class MyRestaurant extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      Text(
+                      const Text(
                         "Payment Model",
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Text(
                         "CASH",
                         style: TextStyle(color: Colors.grey[800], fontSize: 16),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
                         "CARD",
                         style: TextStyle(color: Colors.grey[800], fontSize: 16),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(

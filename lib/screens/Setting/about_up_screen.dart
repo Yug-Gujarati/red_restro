@@ -4,7 +4,7 @@ import 'package:red_restro/screens/Setting/about_us.dart';
 import 'package:red_restro/screens/notification/notification_screen.dart';
 import 'package:red_restro/screens/Setting/privacy_policy.dart';
 import '../../components/drawer.dart';
-import '../Auth/login_screen.dart';
+import '../Auth/login/login_screen.dart';
 import 'my_restaurant.dart';
 import 'term_and_condition.dart';
 
@@ -20,10 +20,10 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -41,26 +41,20 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
                         }),
                   ),
                   const Spacer(),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
-                  Text(
+                  const Text(
                     "Setting",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24),
+                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24),
                   ),
                   const SizedBox(
                     width: 10,
                   ),
-                  Spacer(),
+                  const Spacer(),
                   InkWell(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => NotificationScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const NotificationScreen()));
                     },
                     child: Container(
                       height: 30,
@@ -83,10 +77,7 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => MyRestaurant()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const MyRestaurant()));
                     },
                     child: Container(
                       height: 30,
@@ -106,7 +97,7 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               SizedBox(
@@ -117,7 +108,7 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
                     fillColor: Colors.white,
                     filled: true,
                     // hintText: "What you want today",
-                    label: Text(
+                    label: const Text(
                       "What you want today",
                       style: TextStyle(fontSize: 14),
                     ),
@@ -137,34 +128,30 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               BackButton(
                 onPressed: () => Navigator.of(context).pop(),
                 color: Colors.black,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 3,
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 2, bottom: 2),
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AboutUs()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutUs()));
                   },
                   child: Row(
                     children: [
                       Text(
                         "About Us",
-                        style: TextStyle(
-                            color: Colors.grey[800],
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold),
+                        style: TextStyle(color: Colors.grey[800], fontSize: 22, fontWeight: FontWeight.bold),
                       ),
-                      Spacer(),
-                      Icon(
+                      const Spacer(),
+                      const Icon(
                         Icons.arrow_right,
                         size: 40,
                         color: Colors.black,
@@ -181,22 +168,16 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
                 padding: const EdgeInsets.only(top: 2, bottom: 2),
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PrivacyPolicy()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const PrivacyPolicy()));
                   },
                   child: Row(
                     children: [
                       Text(
                         "Privacy Policy",
-                        style: TextStyle(
-                            color: Colors.grey[800],
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold),
+                        style: TextStyle(color: Colors.grey[800], fontSize: 22, fontWeight: FontWeight.bold),
                       ),
-                      Spacer(),
-                      Icon(
+                      const Spacer(),
+                      const Icon(
                         Icons.arrow_right,
                         size: 40,
                         color: Colors.black,
@@ -213,22 +194,16 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
                 padding: const EdgeInsets.only(top: 2, bottom: 2),
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => TermsAndCondition()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const TermsAndCondition()));
                   },
                   child: Row(
                     children: [
                       Text(
                         "Terms and Condition",
-                        style: TextStyle(
-                            color: Colors.grey[800],
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold),
+                        style: TextStyle(color: Colors.grey[800], fontSize: 22, fontWeight: FontWeight.bold),
                       ),
-                      Spacer(),
-                      Icon(
+                      const Spacer(),
+                      const Icon(
                         Icons.arrow_right,
                         size: 40,
                         color: Colors.black,
@@ -237,12 +212,11 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
                   ),
                 ),
               ),
-              Text(
+              const Text(
                 "Delete Your Account",
-                style:
-                    TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+                style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Padding(
@@ -253,7 +227,7 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
                     color: Colors.white,
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Column(
                       children: [
                         Text(
@@ -286,19 +260,18 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => LoginScreen(),
+                                      builder: (context) => const LoginScreen(),
                                     ));
                               },
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 15),
+                              child: const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 15),
                                 child: Text(
                                   "Yes",
                                   style: TextStyle(color: Colors.white),
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 15,
                             ),
                             ElevatedButton(
@@ -312,12 +285,11 @@ class _AboutUsScreeenState extends State<AboutUsScreeen> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => SettingScreen(),
+                                      builder: (context) => const SettingScreen(),
                                     ));
-                                ;
                               },
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
+                              child: const Padding(
+                                padding: EdgeInsets.symmetric(
                                   horizontal: 15,
                                 ),
                                 child: Text(

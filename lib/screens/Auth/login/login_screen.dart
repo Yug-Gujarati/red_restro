@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:red_restro/screens/dashboard/dashbord_page.dart';
-import '../../components/custom_button.dart';
-import '../../components/custom_text_field.dart';
-import 'login_screen.dart';
+import 'package:get/get.dart';
+import 'package:red_restro/components/custom_button.dart';
+import 'package:red_restro/components/custom_text_field.dart';
 
-class RegistrationScreen extends StatefulWidget {
-  const RegistrationScreen({super.key});
+import '../forgotpassword/forgot_password_screen.dart';
+import '../registration/registration_screen.dart';
+import 'login_controller.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<RegistrationScreen> createState() => _RegistrationScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _RegistrationScreenState extends State<RegistrationScreen> {
+class _LoginScreenState extends State<LoginScreen> {
+  LoginPageController controller = Get.put(LoginPageController());
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final nameController = TextEditingController();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-  final confiempasswordControler = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,22 +37,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   'assets/images/app_logo1.png',
                   width: MediaQuery.of(context).size.width * 0.15,
                 ),
-                Text(
+                const Text(
                   "BLISHBOWL",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22),
+                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.12,
                 ),
                 Text(
-                  "Sign Up",
-                  style: TextStyle(
-                      color: Colors.orange[800],
-                      fontWeight: FontWeight.bold,
-                      fontSize: 35),
+                  "Get Started",
+                  style: TextStyle(color: Colors.orange[800], fontWeight: FontWeight.bold, fontSize: 35),
                 ),
                 Text(
                   "Please fill your detail to access your account",
@@ -66,32 +60,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   child: Column(
                     children: [
                       CustomTextField(
-                        controller: nameController,
-                        hintText: 'enter your full name',
-                        errortext: "Please enter full name",
-                        icon: Icons.person_rounded,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter full name';
-                          }
-                          return null;
-                        },
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      CustomTextField(
-                        controller: emailController,
-                        hintText: "enter your email",
-                        errortext: "enter email",
+                        controller: controller.emailController.value,
+                        hintText: 'enter your email',
+                        errortext: "Please enter email",
                         icon: Icons.mail,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter email';
-                          } else if (!RegExp(
-                                  r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
-                              .hasMatch(value)) {
-                            return 'Please enter a valid email address';
                           }
                           return null;
                         },
@@ -100,49 +75,41 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       CustomTextField(
-                        controller: passwordController,
+                        controller: controller.passwordController.value,
                         hintText: "enter your password",
                         errortext: "enter password",
                         icon: Icons.remove_red_eye_outlined,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter password';
-                          } else if (value.length < 8) {
-                            return 'Password must be at least 8 characters long';
                           }
                           return null;
                         },
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
+                        height: MediaQuery.of(context).size.height * 0.001,
                       ),
-                      CustomTextField(
-                        controller: confiempasswordControler,
-                        hintText: "enter your password",
-                        errortext: "enter password",
-                        icon: Icons.remove_red_eye_outlined,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Confirm password is required';
-                          } else if (value != passwordController.value.text) {
-                            return 'Passwords do not match';
-                          }
-                          return null;
-                        },
+                      Row(
+                        children: [
+                          const Spacer(),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ForgotPasswordScreen()));
+                              },
+                              child: Text(
+                                "Forgot Password ?",
+                                style: TextStyle(color: Colors.orange[800], fontWeight: FontWeight.bold, fontSize: 14),
+                              )),
+                        ],
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.03,
                       ),
                       CustomButton(
-                        text: "Sign Up",
+                        text: "Log in",
                         onTap: () {
-                          if (_formKey.currentState?.validate() == true &&
-                              passwordController.value.text ==
-                                  confiempasswordControler.value.text) {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => DashBord_Page()));
+                          if (_formKey.currentState?.validate() == true) {
+                            controller.login();
                           }
                         },
                         color: const Color.fromARGB(255, 239, 108, 0),
@@ -152,37 +119,29 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
-                              "Alrady have an Account ?",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 14),
+                            const Text(
+                              "Don't have an Account ?",
+                              style: TextStyle(color: Colors.black, fontSize: 14),
                             ),
                             TextButton(
                                 onPressed: () {
-                                  Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => LoginScreen()));
+                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const RegistrationScreen()));
                                 },
                                 child: Text(
-                                  "Log in ",
-                                  style: TextStyle(
-                                      color: Colors.orange[800],
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14),
+                                  "Sign Up",
+                                  style: TextStyle(color: Colors.orange[800], fontWeight: FontWeight.bold, fontSize: 14),
                                 )),
+                            const Spacer(),
                           ],
                         ),
                       ),
-                      Text(
+                      const Text(
                         "Or",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -195,7 +154,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                 'assets/images/google.png',
                                 height: 25,
                               )),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           CircleAvatar(

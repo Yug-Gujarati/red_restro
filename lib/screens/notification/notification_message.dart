@@ -6,14 +6,14 @@ class NotificationMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: Row(
         children: [
-          CircleAvatar(
+          const CircleAvatar(
             radius: 20,
             backgroundImage: AssetImage("assets/images/profile.jpg"),
           ),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -27,7 +27,7 @@ class NotificationMessage extends StatelessWidget {
               ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Text(
             '2 min', // Replace with the actual text
             style: TextStyle(fontSize: 16, color: Colors.grey[800]),

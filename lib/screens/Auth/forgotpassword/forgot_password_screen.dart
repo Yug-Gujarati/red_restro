@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:red_restro/screens/Auth/login_screen.dart';
+import 'package:get/get.dart';
+import 'package:red_restro/screens/Auth/forgotpassword/forgote_password_controller.dart';
+import 'package:red_restro/screens/Auth/login/login_screen.dart';
 
-import '../../components/custom_button.dart';
-import '../../components/custom_text_field.dart';
-import 'otp_verify_screen.dart';
+import '../../../components/custom_button.dart';
+import '../../../components/custom_text_field.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
@@ -14,7 +15,7 @@ class ForgotPasswordScreen extends StatefulWidget {
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final emailController = TextEditingController();
+  forgotePasswordController controller = Get.put(forgotePasswordController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,22 +36,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     'assets/images/app_logo1.png',
                     width: MediaQuery.of(context).size.width * 0.15,
                   ),
-                  Text(
+                  const Text(
                     "BLISHBOWL",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22),
+                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.12,
                   ),
                   Text(
                     "Forgot Password",
-                    style: TextStyle(
-                        color: Colors.orange[800],
-                        fontWeight: FontWeight.bold,
-                        fontSize: 35),
+                    style: TextStyle(color: Colors.orange[800], fontWeight: FontWeight.bold, fontSize: 35),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -67,16 +62,14 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     child: Column(
                       children: [
                         CustomTextField(
-                          controller: emailController,
+                          controller: controller.emailController.value,
                           hintText: 'enter your Email',
                           errortext: "Please enter email",
                           icon: Icons.mail,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter email';
-                            } else if (!RegExp(
-                                    r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
-                                .hasMatch(value)) {
+                            } else if (!RegExp(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b').hasMatch(value)) {
                               return 'Please enter a valid email address';
                             }
                             return null;
@@ -87,20 +80,13 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         ),
                         Row(
                           children: [
-                            Spacer(),
-                            Text("Did't receive and email?",
-                                style: TextStyle(
-                                    color: Colors.orange[800],
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14)),
+                            const Spacer(),
+                            Text("Did't receive and email?", style: TextStyle(color: Colors.orange[800], fontWeight: FontWeight.bold, fontSize: 14)),
                             TextButton(
                                 onPressed: () {},
                                 child: Text(
                                   "Resend",
-                                  style: TextStyle(
-                                      color: Colors.orange[800],
-                                      fontWeight: FontWeight.w900,
-                                      fontSize: 14),
+                                  style: TextStyle(color: Colors.orange[800], fontWeight: FontWeight.w900, fontSize: 14),
                                 )),
                           ],
                         ),
@@ -111,10 +97,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           text: "Send OTP",
                           onTap: () {
                             if (_formKey.currentState?.validate() == true) {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => OtpVerifyScreen()));
+                              controller.forgotePassword();
                             }
                           },
                           color: const Color.fromARGB(255, 239, 108, 0),
@@ -127,10 +110,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         CustomButton(
                           text: 'Cancle',
                           onTap: () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => LoginScreen()));
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
                           },
                           color: Colors.white,
                           borderColor: const Color.fromARGB(255, 239, 108, 0),

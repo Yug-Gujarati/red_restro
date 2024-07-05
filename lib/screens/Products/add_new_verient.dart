@@ -30,14 +30,14 @@ class _AddNewVerientState extends State<AddNewVerient> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "Option",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Padding(
@@ -57,7 +57,7 @@ class _AddNewVerientState extends State<AddNewVerient> {
                               },
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 25,
                           ),
                           Text(
@@ -72,19 +72,19 @@ class _AddNewVerientState extends State<AddNewVerient> {
                       color: Colors.grey[800],
                       height: 2,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           "Size",
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 60,
                         ),
                         Container(
@@ -93,7 +93,7 @@ class _AddNewVerientState extends State<AddNewVerient> {
                           decoration: BoxDecoration(
                               color: Colors.orange[800],
                               borderRadius: BorderRadius.circular(5)),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Small",
                               style:
@@ -101,14 +101,14 @@ class _AddNewVerientState extends State<AddNewVerient> {
                             ),
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Container(
                           height: 30,
                           width: 70,
                           decoration: BoxDecoration(
                               color: Colors.orange[800],
                               borderRadius: BorderRadius.circular(5)),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Medium",
                               style:
@@ -116,14 +116,14 @@ class _AddNewVerientState extends State<AddNewVerient> {
                             ),
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Container(
                           height: 30,
                           width: 70,
                           decoration: BoxDecoration(
                               color: Colors.orange[800],
                               borderRadius: BorderRadius.circular(5)),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Large",
                               style:
@@ -133,17 +133,17 @@ class _AddNewVerientState extends State<AddNewVerient> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Text(
+                    const Text(
                       "Description",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     SizedBox(
@@ -165,7 +165,7 @@ class _AddNewVerientState extends State<AddNewVerient> {
                             borderSide: BorderSide(
                               color: _formKey.currentState?.validate() == false
                                   ? Colors.red
-                                  : Color.fromARGB(255, 255, 243, 224),
+                                  : const Color.fromARGB(255, 255, 243, 224),
                             ),
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -173,7 +173,7 @@ class _AddNewVerientState extends State<AddNewVerient> {
                             borderSide: BorderSide(
                               color: _formKey.currentState?.validate() == false
                                   ? Colors.red
-                                  : Color.fromARGB(255, 255, 243, 224),
+                                  : const Color.fromARGB(255, 255, 243, 224),
                             ),
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -187,7 +187,7 @@ class _AddNewVerientState extends State<AddNewVerient> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
@@ -200,7 +200,7 @@ class _AddNewVerientState extends State<AddNewVerient> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ProductScreen()));
+                                      builder: (context) => const ProductScreen()));
                             });
                           },
                           child: Container(
@@ -224,7 +224,7 @@ class _AddNewVerientState extends State<AddNewVerient> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         InkWell(
@@ -234,7 +234,7 @@ class _AddNewVerientState extends State<AddNewVerient> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ProductScreen()));
+                                      builder: (context) => const ProductScreen()));
                             });
                           },
                           child: Container(

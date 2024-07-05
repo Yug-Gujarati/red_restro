@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:red_restro/components/drawer.dart';
 import 'package:red_restro/screens/dashboard/dashbord_page.dart';
 
@@ -32,7 +31,7 @@ class _KitchenScreenState extends State<KitchenScreen> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: ((context) => DashBord_Page())));
+                                  builder: ((context) => const DashBord_Page())));
                         },
                         icon: const Icon(
                           Icons.arrow_back,

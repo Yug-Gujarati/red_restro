@@ -44,10 +44,10 @@ class _MyTableState extends State<MyTable> {
             ));
     return Material(
       color: Colors.white,
-      child: Container(
+      child: SizedBox(
         height: 500,
         child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 5,
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
@@ -59,10 +59,10 @@ class _MyTableState extends State<MyTable> {
             final borderColor = borderColors[index % 3];
             return GestureDetector(
               onTap: () {
-                if (tables[index].color == Color.fromARGB(255, 187, 222, 251)) {
+                if (tables[index].color == const Color.fromARGB(255, 187, 222, 251)) {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ProductScreen()),
+                    MaterialPageRoute(builder: (context) => const ProductScreen()),
                   );
                 }
               },
@@ -70,10 +70,10 @@ class _MyTableState extends State<MyTable> {
                 stackFit: StackFit.expand,
                 color: borderColor,
                 strokeWidth: 2.0,
-                dashPattern: [5, 3, 5, 3], // Increase dots and spaces
+                dashPattern: const [5, 3, 5, 3], // Increase dots and spaces
                 strokeCap: StrokeCap.round, // Circular corners
-                radius: Radius.circular(10),
-                borderPadding: EdgeInsets.all(1),
+                radius: const Radius.circular(10),
+                borderPadding: const EdgeInsets.all(1),
                 borderType: BorderType.RRect,
                 child: Container(
                   height: 40,
@@ -87,7 +87,7 @@ class _MyTableState extends State<MyTable> {
                     children: [
                       Text(
                         table.id,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
@@ -95,7 +95,7 @@ class _MyTableState extends State<MyTable> {
                       ),
                       Text(
                         "Seat's: ${table.numberOfSeats}",
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 10,
                         ),
                       ),

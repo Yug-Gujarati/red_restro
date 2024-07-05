@@ -86,8 +86,8 @@ class _OrderScreenState extends State<OrderScreen> {
         context: context,
         builder: (BuildContext context) {
           return ConstrainedBox(
-            constraints: BoxConstraints(maxWidth: 600),
-            child: AlertDialog(
+            constraints: const BoxConstraints(maxWidth: 600),
+            child: const AlertDialog(
               backgroundColor: Colors.white,
               scrollable: true,
               surfaceTintColor: Colors.white,
@@ -106,7 +106,7 @@ class _OrderScreenState extends State<OrderScreen> {
       drawer: const MyDrawer(),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
@@ -234,7 +234,7 @@ class _OrderScreenState extends State<OrderScreen> {
                       decoration: BoxDecoration(
                           color: Colors.red[200],
                           borderRadius: BorderRadius.circular(5)),
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
@@ -251,10 +251,10 @@ class _OrderScreenState extends State<OrderScreen> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -289,7 +289,7 @@ class _OrderScreenState extends State<OrderScreen> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Column(
@@ -344,39 +344,39 @@ class _OrderScreenState extends State<OrderScreen> {
                                       children: [
                                         Text(
                                           orders[index]['id']!,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Colors.black,
                                               fontSize: 10),
                                         ),
-                                        Spacer(),
+                                        const Spacer(),
                                         Text(
                                           orders[index]['date']!,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Colors.black,
                                               fontSize: 10),
                                         ),
-                                        Spacer(),
+                                        const Spacer(),
                                         Text(
                                           orders[index]['name']!,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Colors.black,
                                               fontSize: 10),
                                         ),
-                                        Spacer(),
+                                        const Spacer(),
                                         Text(
                                           orders[index]['address']!,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Colors.black,
                                               fontSize: 10),
                                         ),
-                                        Spacer(),
+                                        const Spacer(),
                                         Text(
                                           orders[index]['price']!,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               color: Colors.black,
                                               fontSize: 10),
                                         ),
-                                        Spacer(),
+                                        const Spacer(),
                                         Text(
                                           "${orders[index]['status']}",
                                           style: TextStyle(

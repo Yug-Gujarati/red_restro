@@ -25,7 +25,7 @@ class CustomTextField extends StatelessWidget {
       validator: validator,
       decoration: InputDecoration(
         alignLabelWithHint: true,
-        contentPadding: EdgeInsets.only(top: 1, bottom: 1),
+        contentPadding: const EdgeInsets.only(top: 1, bottom: 1),
         filled: true,
         fillColor: Colors.white,
         hintText: hintText,
@@ -40,25 +40,19 @@ class CustomTextField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: _formKey.currentState?.validate() == false
-                ? Colors.red
-                : Color.fromARGB(255, 255, 153, 0),
+            color: _formKey.currentState?.validate() == false ? Colors.red : const Color.fromARGB(255, 255, 153, 0),
           ),
           borderRadius: BorderRadius.circular(50),
         ),
         border: OutlineInputBorder(
           borderSide: BorderSide(
-            color: _formKey.currentState?.validate() == false
-                ? Colors.red
-                : Color.fromARGB(255, 255, 153, 0),
+            color: _formKey.currentState?.validate() == false ? Colors.red : const Color.fromARGB(255, 255, 153, 0),
           ),
           borderRadius: BorderRadius.circular(50),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: _formKey.currentState?.validate() == false
-                ? Colors.red
-                : Color.fromARGB(255, 255, 153, 0),
+            color: _formKey.currentState?.validate() == false ? Colors.red : const Color.fromARGB(255, 255, 153, 0),
           ),
           borderRadius: BorderRadius.circular(50),
         ),
@@ -68,9 +62,12 @@ class CustomTextField extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(50),
         ),
-        errorText:
-            _formKey.currentState?.validate() == false ? errortext : null,
+        errorText: _formKey.currentState?.validate() == false ? errortext : null,
       ),
     );
+  }
+
+  void clearText() {
+    controller?.clear();
   }
 }

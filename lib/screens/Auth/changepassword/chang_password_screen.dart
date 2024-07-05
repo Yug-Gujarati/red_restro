@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:red_restro/components/custom_button.dart';
-import '../../components/custom_text_field.dart';
-import 'login_screen.dart';
+import 'package:red_restro/screens/Auth/changepassword/chang_password_controller.dart';
+import '../../../components/custom_text_field.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
   const ChangePasswordScreen({super.key});
@@ -12,8 +13,7 @@ class ChangePasswordScreen extends StatefulWidget {
 
 class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final passwordController = TextEditingController();
-  final ConfirmpasswordController = TextEditingController();
+  changePasswordController controller = Get.put(changePasswordController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,22 +34,16 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   'assets/images/app_logo1.png',
                   width: MediaQuery.of(context).size.width * 0.15,
                 ),
-                Text(
+                const Text(
                   "BLISHBOWL",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22),
+                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.12,
                 ),
                 Text(
                   "Reset your password",
-                  style: TextStyle(
-                      color: Colors.orange[800],
-                      fontWeight: FontWeight.bold,
-                      fontSize: 35),
+                  style: TextStyle(color: Colors.orange[800], fontWeight: FontWeight.bold, fontSize: 35),
                 ),
                 Text(
                   "Now you can change your password",
@@ -63,7 +57,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   child: Column(
                     children: [
                       CustomTextField(
-                        controller: passwordController,
+                        controller: controller.passwordController.value,
                         hintText: 'enter your password',
                         errortext: "Please enter password",
                         icon: Icons.lock,
@@ -80,15 +74,13 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       CustomTextField(
-                        controller: ConfirmpasswordController,
+                        controller: controller.confirmPasswordController.value,
                         hintText: "enter your confirm Password",
                         errortext: "Enter confirm Password",
                         icon: Icons.lock,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter confirm Password';
-                          } else if (value != passwordController.value.text) {
-                            return 'Passwords do not match';
                           }
                           return null;
                         },
@@ -100,10 +92,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           text: "Reset Password",
                           onTap: () {
                             if (_formKey.currentState?.validate() == true) {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => LoginScreen()));
+                              controller.changPassword();
                             }
                           },
                           color: const Color.fromARGB(255, 239, 108, 0),

@@ -60,10 +60,10 @@ class _PizzaScreenState extends State<PizzaScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 500,
       child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             childAspectRatio: 1.2, // Adjust aspect ratio as needed
             mainAxisSpacing: 10,
@@ -86,14 +86,14 @@ class _PizzaScreenState extends State<PizzaScreen> {
                 children: [
                   Text(
                     item['name']!,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 12,
                       color: Colors.black,
                     ),
                   ),
                   Text(
                     item['price']!,
-                    style: TextStyle(fontSize: 12, color: Colors.black),
+                    style: const TextStyle(fontSize: 12, color: Colors.black),
                   ),
                 ],
               ),

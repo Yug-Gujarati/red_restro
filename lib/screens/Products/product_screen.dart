@@ -30,6 +30,7 @@ class _ProductScreenState extends State<ProductScreen> {
 
   late int currentPageIndex = 0;
 
+  @override
   void initState() {
     super.initState();
     currentPageIndex = 0;
@@ -232,14 +233,14 @@ class _ProductScreenState extends State<ProductScreen> {
                   ),
                 ),
                 if (showForm)
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
+                  const Padding(
+                    padding: EdgeInsets.all(10.0),
                     child: Center(
                       child: AddNewProduct(),
                     ),
                   )
                 else if (showForm1)
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Center(child: AddNewVerient()),
                   )
@@ -260,7 +261,7 @@ class _ProductScreenState extends State<ProductScreen> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(top: 10),
-                                  child: Container(
+                                  child: SizedBox(
                                     height: 50,
                                     width: 220,
                                     child: ListView.builder(

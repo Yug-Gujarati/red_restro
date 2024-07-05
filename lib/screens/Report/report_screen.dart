@@ -20,10 +20,10 @@ class _ReportScreenState extends State<ReportScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
@@ -107,7 +107,7 @@ class _ReportScreenState extends State<ReportScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: SizedBox(
                     height: 30,
                     width: 570,
@@ -138,7 +138,7 @@ class _ReportScreenState extends State<ReportScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Container(
                     width: 500,
                     decoration: BoxDecoration(
@@ -191,7 +191,7 @@ class _ReportScreenState extends State<ReportScreen> {
                                 )),
                           ],
                         ),
-                        if (showForm1) PurchaseScreen() else SaleScreen()
+                        if (showForm1) const PurchaseScreen() else const SaleScreen()
                       ],
                     ),
                   ),

@@ -14,20 +14,20 @@ class _MyReportState extends State<MyReport> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Container(
+      child: SizedBox(
         height: 300,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Report",
               style: TextStyle(
                   fontSize: 24,
                   color: Colors.black,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -35,13 +35,13 @@ class _MyReportState extends State<MyReport> {
               height: 1,
               color: Colors.grey[800],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
+                const Text(
                   "From:  ",
                   style: TextStyle(
                       fontSize: 20,
@@ -97,7 +97,7 @@ class _MyReportState extends State<MyReport> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
+                const Text(
                   "To:      ",
                   style: TextStyle(
                       fontSize: 20,
@@ -153,7 +153,7 @@ class _MyReportState extends State<MyReport> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(
+                const Text(
                   "Time:  ",
                   style: TextStyle(
                       fontSize: 20,
@@ -206,7 +206,7 @@ class _MyReportState extends State<MyReport> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(
@@ -239,7 +239,7 @@ class _MyReportState extends State<MyReport> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 InkWell(
